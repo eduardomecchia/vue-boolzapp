@@ -144,7 +144,6 @@ const app = new Vue({
         // Make the first contact be the default one 
         this.currentRecipient = this.contacts[0];
         const firstContact = this.currentRecipient;
-
         this.recipientImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
     }
 });

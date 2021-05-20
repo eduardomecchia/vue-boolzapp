@@ -87,7 +87,9 @@
 
                 <!-- Messages section -->
                 <div class="messages">
-                    <div v-for="message in currentRecipient.messages">{{ message.text }}</div>
+                    <div class="message" v-for="message in currentRecipient.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
+                        <span>{{ message.text }}</span>
+                    </div>
                 </div>
 
                 <!-- Message input field -->
