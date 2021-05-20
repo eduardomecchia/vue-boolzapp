@@ -53,7 +53,7 @@
 
                 <!-- Contact list -->
                 <ul class="contactList greyBg">
-                    <li class="contactEntry whiteBg" v-for="(contact, index) in contacts" @click="selectContact(index), updateContactImage(index)">
+                    <li class="contactEntry whiteBg" v-for="(contact, index) in contacts" @click="selectContact(index), updateRecipient(index)">
                         <div class="contactImageWrapper">
                             <img :src="getContactImage(index)" alt="">
                         </div>
@@ -73,7 +73,7 @@
                             </div>
     
                             <div class="recipientInfo">
-                                <span>Michele</span>
+                                <span>{{ currentRecipient.name }}</span>
                                 <span class="recipientStatus darkGreyText">Ultimo accesso oggi alle</span> 
                             </div>
                     </div>

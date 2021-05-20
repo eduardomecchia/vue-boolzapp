@@ -119,6 +119,8 @@ const app = new Vue({
         ],
 
         recipientImage: '',
+        
+        currentRecipient: ''
     },
 
     methods: {
@@ -132,14 +134,18 @@ const app = new Vue({
             console.log(this.contacts[index]);
         },
 
-        updateContactImage(index) {
+        updateRecipient(index) {
             const avatar = this.contacts[index].avatar;
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
+            this.currentRecipient = this.contacts[index];
         }
     },
 
     mounted() {
-        const firstContact = this.contacts[0];
+        // Make the first contact be the default one 
+        this.currentRecipient = this.contacts[0];
+        const firstContact = this.currentRecipient;
+
         this.recipientImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
     }
 });
