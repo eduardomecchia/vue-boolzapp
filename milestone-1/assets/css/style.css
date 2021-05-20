@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: darkslategrey;
+    background-image: linear-gradient(to bottom, #009688, #d7dbd7);
 }
 
 .greyBg {
@@ -231,3 +231,9 @@ main .msgBarContainer i {
 #msgBar:focus-visible {
     outline: 0;
 }
+
+/* Message classes */
+
+.userMessage {}
+
+.recipientMessage {}
