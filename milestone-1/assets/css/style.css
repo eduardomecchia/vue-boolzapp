@@ -31,7 +31,7 @@ body {
     color: #6b7376;
 }
 
-i {
+i:not(.searchBar i) {
     font-size: 32px;
     cursor: pointer;
 }
@@ -58,11 +58,10 @@ i {
 /* User options rules */
 
 .userOptions {
-    /* height: 110px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 15px;
 }
 
 .user {
@@ -80,8 +79,8 @@ i {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 120px; */
     background-color: #8ddbfc;
+    padding: 25px 0;
 }
 
 .bell {
@@ -106,7 +105,6 @@ i {
 /* Search bar rules */
 
 .searchBarContainer {
-    /* height: 70px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +115,7 @@ i {
     align-items: center;
     width: 95%;
     height: 70%;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .searchBar i {
