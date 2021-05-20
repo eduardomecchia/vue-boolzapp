@@ -234,6 +234,10 @@ main .msgBarContainer i {
 
 /* Message classes */
 
-/* .userMessage {}
+.userMessage {
+    background-color: #d5f9ba;
+}
 
-.recipientMessage {} */
+.recipientMessage {
+    background-color: white;
+}
