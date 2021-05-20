@@ -5,4 +5,18 @@
     padding: 0;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Application wrapper rules */ 
+
+#app {
+    width: 85%;
+    height: 95%;
+    background-color: red;
+}
