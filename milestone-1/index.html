@@ -14,14 +14,14 @@
         <!-- Application wrapper -->
         <div id="app">
             <div class="sidebar">
-                <!-- User panel with options -->
-                <div class="userOptions greyBg">
+                <!-- Info and options regarding the user -->
+                <div id="userOptions" class="greyBg">
                     <div class="user">
                         <div class="contactImageWrapper">
                             <img :src="userImage" alt="">
                         </div>
 
-                        <div class="username">Nome Utente</div>
+                        <div>Nome Utente</div>
                     </div>
 
                     <div class="options greyText">
@@ -62,6 +62,30 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- Messaging interface -->
+            <main>
+                <!-- Info and options regarding the recipient -->
+                <div id="recipientOptions" class="greyBg">
+                    <div class="recipient">
+                            <div class="contactImageWrapper">
+                                <img :src="userImage" alt="">
+                            </div>
+    
+                            <div class="recipientInfo">
+                                <span>Michele</span>
+                                <span class="recipientStatus darkGreyText">Ultimo accesso oggi alle</span> 
+                            </div>
+                    </div>
+
+                    <div class="options greyText">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+
+            </main>
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>

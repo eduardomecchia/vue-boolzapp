@@ -57,19 +57,21 @@ i:not(.searchBar i) {
 
 /* User options rules */
 
-.userOptions {
+#userOptions,
+#recipientOptions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
 }
 
-.user {
+.user, 
+.recipient {
     display: flex;
     align-items: center;
 }
 
-.userOptions .options i {
+.options i {
     margin-right: 20px;
 }
 
@@ -170,4 +172,29 @@ i:not(.searchBar i) {
 .contactImageWrapper img {
     max-height: 100%;
     border-radius: 50%;
+}
+
+/* Messaging interface rules */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#recipientOptions {
+    border-left: 1px solid lightgrey;
+}
+
+.recipientInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.recipientStatus {
+    font-size: 20px;
+    margin-top: 5px;
 }
