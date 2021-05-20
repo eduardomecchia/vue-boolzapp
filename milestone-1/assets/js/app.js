@@ -3,7 +3,7 @@ const app = new Vue({
 
     data:  {
         userImage: './assets/img/avatar_io.jpg',
-        
+
         recipientImage: './assets/img/avatar_1.jpg', // Temporary, static
 
         contacts: [
@@ -90,6 +90,34 @@ const app = new Vue({
                     }
                 ],
             },
+
+            {
+                name: 'Vincenzo',
+                avatar: '_5',
+                visible: true,
+                messages: [],
+            },
+
+            {
+                name: 'Sara',
+                avatar: '_6',
+                visible: true,
+                messages: [],
+            },
+
+            {
+                name: 'Ugo',
+                avatar: '_7',
+                visible: true,
+                messages: [],
+            },
+
+            {
+                name: 'Francesco',
+                avatar: '_8',
+                visible: true,
+                messages: [],
+            }
         ]
     },
 

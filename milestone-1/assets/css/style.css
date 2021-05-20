@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, #009688, #d7dbd7);
+    background-image: linear-gradient(to bottom, #009688 50%, #d7dbd7 50%);
 }
 
 .greyBg {
@@ -234,6 +234,6 @@ main .msgBarContainer i {
 
 /* Message classes */
 
-.userMessage {}
+/* .userMessage {}
 
-.recipientMessage {}
+.recipientMessage {} */
