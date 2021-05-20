@@ -18,5 +18,16 @@ body {
 #app {
     width: 85%;
     height: 95%;
+    display: flex;
     background-color: red;
+}
+
+/* Sidebar */
+
+.sidebar {
+    height: 100%;
+    width: 500px;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
 }
