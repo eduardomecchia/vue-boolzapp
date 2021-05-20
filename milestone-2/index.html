@@ -53,7 +53,7 @@
 
                 <!-- Contact list -->
                 <ul class="contactList greyBg">
-                    <li class="contactEntry whiteBg" v-for="(contact, index) in contacts">
+                    <li class="contactEntry whiteBg" v-for="(contact, index) in contacts" @click="selectContact(index), updateContactImage(index)">
                         <div class="contactImageWrapper">
                             <img :src="getContactImage(index)" alt="">
                         </div>

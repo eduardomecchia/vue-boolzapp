@@ -3,9 +3,7 @@ const app = new Vue({
 
     data:  {
         userImage: './assets/img/avatar_io.jpg',
-
-        recipientImage: './assets/img/avatar_1.jpg', // Temporary, static
-
+        
         contacts: [
             {
                 name: 'Michele',
@@ -118,7 +116,9 @@ const app = new Vue({
                 visible: true,
                 messages: [],
             }
-        ]
+        ],
+
+        recipientImage: '',
     },
 
     methods: {
@@ -126,6 +126,20 @@ const app = new Vue({
             const contact = this.contacts[index];
             const imagePath = `./assets/img/avatar${contact.avatar}.jpg`;
             return imagePath
+        },
+
+        selectContact(index) {
+            console.log(this.contacts[index]);
+        },
+
+        updateContactImage(index) {
+            const avatar = this.contacts[index].avatar;
+            this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
         }
+    },
+
+    mounted() {
+        const firstContact = this.contacts[0];
+        this.recipientImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
     }
 });
