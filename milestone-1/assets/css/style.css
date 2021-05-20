@@ -13,7 +13,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, #009688 50%, #d7dbd7 50%);
+    background-image: linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%
+)
 }
 
 .greyBg {
