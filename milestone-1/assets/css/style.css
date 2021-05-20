@@ -22,12 +22,16 @@ body {
     background-color: #ffffff;
 }
 
-.greyFont {
+.greyText {
     color: #b1b1b1;
 }
 
-.darkGreyFont {
+.darkGreyText {
     color: #6b7376;
+}
+
+i {
+    font-size: 32px;
 }
 
 /* Application wrapper rules */ 
