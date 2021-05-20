@@ -32,6 +32,7 @@ body {
 
 i {
     font-size: 32px;
+    cursor: pointer;
 }
 
 /* Application wrapper rules */ 
@@ -104,6 +105,10 @@ i {
     border-radius: 50%;
     padding: 15px;
     margin-right: 15px;
+}
+
+.bell i {
+    cursor: default;
 }
 
 .turnOnNotifications {
