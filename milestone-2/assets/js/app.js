@@ -131,13 +131,12 @@ const app = new Vue({
         },
 
         selectContact(index) {
-            console.log(this.contacts[index]);
+            this.currentRecipient = this.contacts[index];
         },
 
-        updateRecipient(index) {
+        updateRecipientImage(index) {
             const avatar = this.contacts[index].avatar;
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
-            this.currentRecipient = this.contacts[index];
         }
     },
 
