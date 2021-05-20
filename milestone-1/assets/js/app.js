@@ -3,6 +3,8 @@ const app = new Vue({
 
     data:  {
         userImage: './assets/img/avatar_io.jpg',
+        
+        recipientImage: './assets/img/avatar_1.jpg', // Temporary, static
 
         contacts: [
             {
