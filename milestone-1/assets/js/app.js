@@ -3,7 +3,7 @@ const app = new Vue({
 
     data:  {
         userImage: './assets/img/avatar_io.jpg',
-        
+
         contacts: [
             {
                 name: 'Michele',
@@ -91,5 +91,11 @@ const app = new Vue({
         ]
     },
 
-    methods: {}
+    methods: {
+        getContactImage(index) {
+            const contact = this.contacts[index];
+            const imagePath = `./assets/img/avatar${contact.avatar}.jpg`;
+            return imagePath
+        }
+    }
 });

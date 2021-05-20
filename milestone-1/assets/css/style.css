@@ -73,20 +73,6 @@ i {
     margin-right: 20px;
 }
 
-.contactImageWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    height: 75px;
-}
-
-.contactImageWrapper img {
-    max-height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 /* Notifications bar rules */
 
 .notifications {
@@ -144,4 +130,28 @@ i {
 
 #search:focus-visible {
     outline: 0;
+}
+
+/* Contact list rules */ 
+
+.contactList {
+    list-style-type: none;
+}
+
+.contactEntry {
+    display: flex;
+}
+
+.contactImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+}
+
+.contactImageWrapper img {
+    max-height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }

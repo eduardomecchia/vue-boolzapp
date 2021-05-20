@@ -50,7 +50,15 @@
                 </div>
 
                 <!-- Contact list -->
-                <div class="contactList"></div>
+                <ul class="contactList whiteBg">
+                    <li class="contactEntry" v-for="(contact, index) in contacts">
+                        <div class="contactImageWrapper">
+                            <img :src="getContactImage(index)" alt="">
+                        </div>
+
+                        <span>{{ contact.name }}</span>
+                    </li>
+                </ul>
             </div>
         </div>
         
