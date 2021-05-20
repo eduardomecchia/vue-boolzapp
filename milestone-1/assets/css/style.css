@@ -13,6 +13,22 @@ body {
     align-items: center;
 }
 
+.greyBg {
+    background-color: #eaeaea;
+}
+
+.whiteBg {
+    background-color: #ffffff;
+}
+
+.greyFont {
+    color: #b1b1b1;
+}
+
+.darkGreyFont {
+    color: #6b7376;
+}
+
 /* Application wrapper rules */ 
 
 #app {
@@ -35,5 +51,12 @@ body {
 /* User options rules */
 
 .userOptions {
-    
+
+}
+
+/* Notifications bar rules */
+
+.notifications {
+    height: 100px;
+    background-color: #8ddbfc;
 }
