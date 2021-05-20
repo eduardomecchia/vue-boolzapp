@@ -52,7 +52,7 @@ body {
 /* User options rules */
 
 .userOptions {
-    height: 100px;
+    height: 110px;
 }
 
 /* Notifications bar rules */
@@ -61,7 +61,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 120px;
     background-color: #8ddbfc;
 }
 
@@ -78,4 +78,34 @@ body {
 .turnOnNotifications {
     display: flex;
     flex-direction: column;
+}
+
+/* Search bar rules */
+
+.searchBarContainer {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 70%;
+    padding: 0 20px;
+}
+
+.searchBar i {
+    margin-right: 30px;
+}
+
+#search {
+    flex-grow: 1;
+    border: 0;
+}
+
+#search:focus-visible {
+    outline: 0;
 }
