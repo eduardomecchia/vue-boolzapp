@@ -53,6 +53,33 @@ body {
 
 .userOptions {
     height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.userOptions .options i {
+    margin-right: 20px;
+}
+
+.contactImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+}
+
+.contactImageWrapper img {
+    max-height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Notifications bar rules */

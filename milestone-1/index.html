@@ -14,7 +14,19 @@
             <div class="sidebar">
                 <!-- User panel with options -->
                 <div class="userOptions greyBg">
-                    
+                    <div class="user">
+                        <div class="contactImageWrapper">
+                            <img :src="userImage" alt="">
+                        </div>
+
+                        <div class="username">Nome Utente</div>
+                    </div>
+
+                    <div class="options">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
 
                 <!-- Notifications bar -->
@@ -22,6 +34,7 @@
                     <div class="bell whiteBg">
                         <i class="fas fa-bell-slash"></i>
                     </div>
+
                     <div class="turnOnNotifications">
                         <span>Ricevi notifiche di nuovi messaggi</span>
                         <a href="#">Attiva notifiche desktop</a>
