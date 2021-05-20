@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 25px;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -51,7 +51,6 @@ i:not(.searchBar i) {
 .sidebar {
     height: 100%;
     width: 500px;
-    background-color: green;
     display: flex;
     flex-direction: column;
 }
@@ -81,7 +80,8 @@ i:not(.searchBar i) {
     justify-content: center;
     align-items: center;
     background-color: #8ddbfc;
-    padding: 25px 0;
+    white-space: nowrap;
+    padding: 25px;
 }
 
 .bell {
@@ -90,17 +90,23 @@ i:not(.searchBar i) {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    padding: 15px;
-    margin-right: 15px;
 }
 
 .bell i {
     cursor: default;
+    padding: 20px 15px;
 }
 
 .turnOnNotifications {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+
+.turnOnNotifications a {
+    font-size: 20px;
+    color: #697485;
+    margin-top: 5px;
 }
 
 /* Search bar rules */
@@ -138,16 +144,18 @@ i:not(.searchBar i) {
 .contactList {
     list-style-type: none;
     overflow-y: auto;
+    flex-grow: 1;
 }
 
 .contactEntry {
-    min-height: calc(100% / 4);
     display: flex;
-    padding: 25px 30px;
+    align-items: center;
+    padding: 15px 30px;
     margin-bottom: 2px;
 }
 
 .contactEntry span {
+    align-self: flex-start;
     margin-left: 30px;
 }
 
