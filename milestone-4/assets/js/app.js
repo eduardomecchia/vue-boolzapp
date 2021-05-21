@@ -177,6 +177,25 @@ const app = new Vue({
                     }
                 );
             }, 1000);
+        },
+
+        // Search for a name in the contact list
+        search() {
+            const elSearch = document.getElementById('search');
+
+            const contactNames = [];
+            
+            this.contacts.forEach(contact => {
+                const contactName = contact.name;
+                contactNames.push(contactName);
+            });
+
+            if (elSearch.value) {
+
+            }
+
+            console.log(elSearch.value);
+            console.log(contactNames);
         }
     },
 
