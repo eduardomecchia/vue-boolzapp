@@ -124,7 +124,7 @@ const app = new Vue({
 
         msgBar: '',
 
-        lastMessage: document.querySelector('.message:last-child')
+        lastMessage: ''
     },
 
     methods: {
@@ -151,7 +151,6 @@ const app = new Vue({
 
         // Send messages pressing enter
         sendMessage() {
-            lastMessage.scrollIntoView();
             this.currentRecipient.messages.push(
                 { 
                     date: this.getCurrentTime(),
@@ -190,7 +189,7 @@ const app = new Vue({
         // Code that runs after the entire view has been rendered
         this.$nextTick(function () {
             // Scroll the messages section to bottom
-            this.lastMessage = document.querySelector(".messages div:last-child");
+            this.lastMessage = document.querySelector('.message:last-child');
             this.lastMessage.scrollIntoView();
           })
     }
