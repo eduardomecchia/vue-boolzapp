@@ -143,11 +143,17 @@ const app = new Vue({
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
         },
 
+        // Get current time as a string using day.js
+        getCurrentTime() {
+            const currentTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
+            return currentTime
+        },
+
         // Send messages pressing enter
         sendMessage() {
             this.currentRecipient.messages.push(
                 { 
-                    date: '',
+                    date: this.getCurrentTime(),
                     text: this.msgBar,
                     status: 'sent'
                 }
@@ -165,7 +171,7 @@ const app = new Vue({
             setTimeout(function () {
                 app.currentRecipient.messages.push(
                     {
-                        date: '',
+                        date: app.getCurrentTime(),
                         text: 'Ok',
                         status: 'received'
                     }
