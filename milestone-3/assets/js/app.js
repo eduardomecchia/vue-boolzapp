@@ -24,6 +24,33 @@ const app = new Vue({
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
                         status: 'received'
+                    },
+
+                    // Testing purposes, delete this
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
                     }
                 ],
             },
@@ -185,5 +212,12 @@ const app = new Vue({
         this.currentRecipient = this.contacts[0];
         const firstContact = this.currentRecipient;
         this.recipientImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
+
+        // Code that runs after the entire view has been rendered
+        this.$nextTick(function () {
+            // Scroll the messages section to bottom
+            const lastMessage = document.querySelector(".messages div:last-child");
+            lastMessage.scrollIntoView();
+          })
     }
 });
