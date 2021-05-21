@@ -120,7 +120,9 @@ const app = new Vue({
 
         recipientImage: '',
         
-        currentRecipient: ''
+        currentRecipient: '',
+
+        msgBar: ''
     },
 
     methods: {
@@ -137,7 +139,17 @@ const app = new Vue({
         updateRecipientImage(index) {
             const avatar = this.contacts[index].avatar;
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
-        }
+        },
+
+        // Send messages pressing enter
+        sendMessage() {
+            this.currentRecipient.messages.push(
+                { 
+                    date: '',
+                    text: this.msgBar,
+                    status: 'sent'
+                });
+            }
     },
 
     mounted() {
