@@ -87,8 +87,13 @@
 
                 <!-- Messages section -->
                 <div class="messages">
-                    <div class="message" v-for="message in currentRecipient.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
+                    <div 
+                    class="message" 
+                    v-for="message in currentRecipient.messages" 
+                    :class="{ sent : message.status === 'sent',
+                    received : message.status === 'received' }">
                         <span>{{ message.text }}</span>
+                        <span class="messageDate greyText">{{ message.date }}</span>
                     </div>
                 </div>
 

@@ -255,6 +255,7 @@ main .msgBarContainer i {
     padding: 25px 20px;
     margin: 10px 0;
     border-radius: 15px;
+    position: relative;
 }
 
 .message.sent {
@@ -267,4 +268,12 @@ main .msgBarContainer i {
     align-self: flex-start;
     background-color: white;
     margin-left: 80px;
+}
+
+.messageDate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 15px;
+    white-space: nowrap;
 }
