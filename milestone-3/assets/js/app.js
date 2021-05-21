@@ -24,33 +24,6 @@ const app = new Vue({
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
                         status: 'received'
-                    },
-
-                    // Testing purposes, delete this
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
                     }
                 ],
             },
@@ -178,6 +151,7 @@ const app = new Vue({
 
         // Send messages pressing enter
         sendMessage() {
+            lastMessage.scrollIntoView();
             this.currentRecipient.messages.push(
                 { 
                     date: this.getCurrentTime(),
@@ -216,8 +190,8 @@ const app = new Vue({
         // Code that runs after the entire view has been rendered
         this.$nextTick(function () {
             // Scroll the messages section to bottom
-            const lastMessage = document.querySelector(".messages div:last-child");
-            lastMessage.scrollIntoView();
+            this.lastMessage = document.querySelector(".messages div:last-child");
+            this.lastMessage.scrollIntoView();
           })
     }
 });
