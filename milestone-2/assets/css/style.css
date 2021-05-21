@@ -79,8 +79,13 @@ i:not(.searchBar i) {
     align-items: center;
 }
 
+.options {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .options i {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 /* Notifications bar rules */
@@ -280,8 +285,4 @@ main .msgBarContainer i {
     margin-top: 5px;
     font-size: 15px;
     white-space: nowrap;
-}
-
-.messageText {
-    /* align-self: center; */
 }
