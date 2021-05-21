@@ -158,7 +158,7 @@ i:not(.searchBar i) {
 
 .contactList {
     list-style-type: none;
-    overflow-y: auto;
+    overflow-y: scroll;
     flex-grow: 1;
 }
 
@@ -250,7 +250,7 @@ main .msgBarContainer i {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding-top: 50px;
 }
 
