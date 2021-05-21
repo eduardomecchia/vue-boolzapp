@@ -122,7 +122,9 @@ const app = new Vue({
         
         currentRecipient: '',
 
-        msgBar: ''
+        msgBar: '',
+
+        lastMessage: document.querySelector('.message:last-child')
     },
 
     methods: {
@@ -148,7 +150,13 @@ const app = new Vue({
                     date: '',
                     text: this.msgBar,
                     status: 'sent'
-                });
+                }
+            );
+            
+            // Clean the message bar
+            this.msgBar = '';
+            
+            // Trigger bot's response
             this.receiveMessage();
         },
 
