@@ -1,0 +1,288 @@
+/* Global rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom,
+    #009688 0px,
+    #009688 138px,
+    #dddbd1 100px,
+    #d2dbdc 100%
+)
+}
+
+.greyBg {
+    background-color: #eaeaea;
+}
+
+.lightGreyBg {
+    background-color: #f3eeea;
+}
+
+.whiteBg {
+    background-color: #ffffff;
+}
+
+.greyText {
+    color: #b1b1b1;
+}
+
+.darkGreyText {
+    color: #6b7376;
+}
+
+i:not(.searchBar i) {
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Application wrapper rules */ 
+
+#app {
+    width: 85%;
+    height: 95%;
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* User panel rules */
+
+#userOptions,
+#recipientOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.user, 
+.recipient {
+    display: flex;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.options i {
+    margin-right: 25px;
+}
+
+/* Notifications bar rules */
+
+.notifications {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8ddbfc;
+    white-space: nowrap;
+    padding: 25px;
+}
+
+.bell {
+    color: #8ddbfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.bell i {
+    cursor: default;
+    padding: 20px 15px;
+}
+
+.turnOnNotifications {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+
+.turnOnNotifications a {
+    font-size: 20px;
+    color: #697485;
+    margin-top: 5px;
+}
+
+/* Search bar rules */
+
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 70%;
+    padding: 30px 20px;
+}
+
+.searchBar i {
+    margin-right: 30px;
+}
+
+#search {
+    font-size: 20px;
+    flex-grow: 1;
+    border: 0;
+}
+
+#search:focus-visible {
+    outline: 0;
+}
+
+/* Contact list rules */ 
+
+.contactList {
+    list-style-type: none;
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
+.contactEntry {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 30px;
+    margin-bottom: 2px;
+}
+
+.contactEntry:hover {
+    background-color: #e9ebeb;
+}
+
+.contactEntry span {
+    align-self: flex-start;
+    margin-left: 30px;
+}
+
+.contactImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 85px;
+}
+
+.contactImageWrapper img {
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+/* Messaging interface rules */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/mine.jpg);
+    border-left: 1px solid lightgrey;
+}
+
+/* Recipient panel rules */ 
+
+.recipientInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.recipientStatus {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* Message input field rules */
+
+.msgBarContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+main .msgBarContainer i {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#msgBar {
+    flex-grow: 1;
+    margin: 0 30px;
+    padding: 20px;
+    border: 0;
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+#msgBar:focus-visible {
+    outline: 0;
+}
+
+/* Messages section */
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 50px;
+}
+
+/* Message classes */
+
+.message {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    position: relative;
+    min-width: 300px;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #d5f9ba;
+    margin-right: 80px;
+}
+
+.message.received {
+    align-self: flex-start;
+    background-color: white;
+    margin-left: 80px;
+}
+
+.messageDate {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin-top: 5px;
+    font-size: 15px;
+    white-space: nowrap;
+}
