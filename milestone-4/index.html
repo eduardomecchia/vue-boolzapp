@@ -47,13 +47,13 @@
                 <div class="searchBarContainer greyBg">
                     <div class="searchBar whiteBg">
                         <i class="fas fa-search greyText"></i>
-                        <input type="text" id="search" placeholder="Cerca o inizia una nuova chat" @keyup="search">
+                        <input type="text" id="search" v-model="searchQuery" placeholder="Cerca o inizia una nuova chat" @keyup="search">
                     </div>
                 </div>
 
                 <!-- Contact list -->
                 <ul class="contactList greyBg">
-                    <li class="contactEntry whiteBg" v-for="(contact, index) in contacts" @click="selectContact(index), updateRecipientImage(index)">
+                    <li class="contactEntry whiteBg" v-for="(contact, index) in filteredContacts" @click="selectContact(index), updateRecipientImage(index)">
                         <div class="contactImageWrapper">
                             <img :src="getContactImage(index)" alt="">
                         </div>
@@ -97,7 +97,7 @@
                 <!-- Message input field -->
                 <div class="msgBarContainer lightGreyBg">
                     <i class="far fa-smile darkGreyText"></i>
-                    <input type="text" id="msgBar" v-model="msgBar" placeholder="Scrivi un messaggio" @keydown.enter="sendMessage">
+                    <input type="text" id="msgBar" v-model="msgBar" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
                     <i class="fas fa-microphone darkGreyText"></i>
                 </div>
             </main>

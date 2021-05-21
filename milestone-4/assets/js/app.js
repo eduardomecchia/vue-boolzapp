@@ -124,7 +124,11 @@ const app = new Vue({
 
         msgBar: '',
 
-        lastMessage: ''
+        lastMessage: '',
+
+        searchQuery: '',
+
+        filteredContacts: ''
     },
 
     methods: {
@@ -181,21 +185,9 @@ const app = new Vue({
 
         // Search for a name in the contact list
         search() {
-            const elSearch = document.getElementById('search');
-
-            const contactNames = [];
-            
-            this.contacts.forEach(contact => {
-                const contactName = contact.name;
-                contactNames.push(contactName);
+            this.filteredContacts = this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
             });
-
-            if (elSearch.value) {
-
-            }
-
-            console.log(elSearch.value);
-            console.log(contactNames);
         }
     },
 
@@ -211,5 +203,8 @@ const app = new Vue({
             this.lastMessage = document.querySelector('.message:last-child');
             this.lastMessage.scrollIntoView();
           })
+
+        // Make the contact list start with all contacts visible
+        this.filteredContacts = this.contacts;
     }
 });
