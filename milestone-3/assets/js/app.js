@@ -149,7 +149,21 @@ const app = new Vue({
                     text: this.msgBar,
                     status: 'sent'
                 });
-            }
+            this.receiveMessage();
+        },
+
+        // Receive message from contact 1 second after you've sent it
+        receiveMessage() {
+            setTimeout(function () {
+                app.currentRecipient.messages.push(
+                    {
+                        date: '',
+                        text: 'Ok',
+                        status: 'received'
+                    }
+                );
+            }, 1000);
+        }
     },
 
     mounted() {
