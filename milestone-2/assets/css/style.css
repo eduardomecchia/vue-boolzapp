@@ -15,8 +15,8 @@ body {
     align-items: center;
     background-image: linear-gradient(to bottom,
     #009688 0px,
-    #009688 15vh,
-    #dddbd1 15vh,
+    #009688 138px,
+    #dddbd1 100px,
     #d2dbdc 100%
 )
 }
@@ -252,10 +252,13 @@ main .msgBarContainer i {
 /* Message classes */
 
 .message {
+    display: flex;
+    flex-direction: column;
     padding: 25px 20px;
     margin: 10px 0;
     border-radius: 15px;
     position: relative;
+    min-width: 300px;
 }
 
 .message.sent {
@@ -272,8 +275,13 @@ main .msgBarContainer i {
 
 .messageDate {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    bottom: 5px;
+    right: 5px;
+    margin-top: 5px;
     font-size: 15px;
     white-space: nowrap;
+}
+
+.messageText {
+    /* align-self: center; */
 }
