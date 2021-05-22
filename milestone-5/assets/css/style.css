@@ -54,9 +54,9 @@ i:not(.search-bar i) {
     display: flex;
 }
 
-/* Sidebar */
+/* Sidebar rules */
 
-.sidebar {
+#sidebar {
     height: 100%;
     width: 500px;
     display: flex;
@@ -194,7 +194,7 @@ i:not(.search-bar i) {
 
 /* Messaging interface rules */
 
-main {
+#app-main {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -226,7 +226,7 @@ main {
     padding: 15px 30px;
 }
 
-main .msg-bar-wrapper i {
+#app-main .msg-bar-wrapper i {
     font-size: 40px;
     cursor: pointer;
 }

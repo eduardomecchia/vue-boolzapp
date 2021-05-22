@@ -13,7 +13,8 @@
     <body>
         <!-- Application wrapper -->
         <div id="app">
-            <div class="sidebar">
+            <!-- Left sidebar -->
+            <aside id="sidebar">
                 <!-- Info and options regarding the user -->
                 <div id="user-options" class="bg-grey">
                     <div class="user">
@@ -61,10 +62,10 @@
                         <span>{{ contact.name }}</span>
                     </li>
                 </ul>
-            </div>
+            </aside>
 
             <!-- Messaging interface -->
-            <main>
+            <main id="app-main">
                 <!-- Info and options regarding the recipient -->
                 <div id="recipient-options" class="bg-grey">
                     <div class="recipient">
@@ -105,8 +106,12 @@
             </main>
         </div>
         
+        <!-- Vue.js 2.6.12 CDN -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+        <!-- Day.js 1.10.4 CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+        
         <script src="./assets/js/app.js"></script>
     </body>
 </html>
