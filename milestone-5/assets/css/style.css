@@ -21,27 +21,27 @@ body {
 )
 }
 
-.greyBg {
+.bg-grey {
     background-color: #eaeaea;
 }
 
-.lightGreyBg {
+.bg-light-grey {
     background-color: #f3eeea;
 }
 
-.whiteBg {
+.bg-white {
     background-color: #ffffff;
 }
 
-.greyText {
+.text-grey {
     color: #b1b1b1;
 }
 
-.darkGreyText {
+.text-dark-grey {
     color: #6b7376;
 }
 
-i:not(.searchBar i) {
+i:not(.search-bar i) {
     font-size: 32px;
     cursor: pointer;
 }
@@ -65,8 +65,8 @@ i:not(.searchBar i) {
 
 /* User panel rules */
 
-#userOptions,
-#recipientOptions {
+#user-options,
+#recipient-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,13 +112,13 @@ i:not(.searchBar i) {
     padding: 20px 15px;
 }
 
-.turnOnNotifications {
+.turn-on-notifications {
     display: flex;
     flex-wrap: wrap;
     margin-left: 15px;
 }
 
-.turnOnNotifications a {
+.turn-on-notifications a {
     font-size: 20px;
     color: #697485;
     margin-top: 5px;
@@ -126,13 +126,13 @@ i:not(.searchBar i) {
 
 /* Search bar rules */
 
-.searchBarContainer {
+.search-bar-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.searchBar {
+.search-bar {
     display: flex;
     align-items: center;
     width: 95%;
@@ -140,7 +140,7 @@ i:not(.searchBar i) {
     padding: 30px 20px;
 }
 
-.searchBar i {
+.search-bar i {
     margin-right: 30px;
 }
 
@@ -156,13 +156,13 @@ i:not(.searchBar i) {
 
 /* Contact list rules */ 
 
-.contactList {
+.contact-list {
     list-style-type: none;
     overflow-y: scroll;
     flex-grow: 1;
 }
 
-.contactEntry {
+.contact-entry {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -170,16 +170,16 @@ i:not(.searchBar i) {
     margin-bottom: 2px;
 }
 
-.contactEntry:hover {
+.contact-entry:hover {
     background-color: #e9ebeb;
 }
 
-.contactEntry span {
+.contact-entry span {
     align-self: flex-start;
     margin-left: 30px;
 }
 
-.avatarWrapper {
+.avatar-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,7 +187,7 @@ i:not(.searchBar i) {
     height: 85px;
 }
 
-.avatarWrapper img {
+.avatar-wrapper img {
     max-height: 100%;
     border-radius: 50%;
 }
@@ -204,7 +204,7 @@ main {
 
 /* Recipient panel rules */ 
 
-.recipientInfo {
+.recipient-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -212,26 +212,26 @@ main {
     margin-left: 20px;
 }
 
-.recipientStatus {
+.recipient-status {
     font-size: 20px;
     margin-top: 5px;
 }
 
 /* Message input field rules */
 
-.msgBarContainer {
+.msg-bar-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     padding: 15px 30px;
 }
 
-main .msgBarContainer i {
+main .msg-bar-wrapper i {
     font-size: 40px;
     cursor: pointer;
 }
 
-#msgBar {
+#msg-bar {
     flex-grow: 1;
     margin: 0 30px;
     padding: 20px;
@@ -240,7 +240,7 @@ main .msgBarContainer i {
     font-size: 20px;
 }
 
-#msgBar:focus-visible {
+#msg-bar:focus-visible {
     outline: 0;
 }
 
@@ -278,7 +278,7 @@ main .msgBarContainer i {
     margin-left: 80px;
 }
 
-.messageDate {
+.message-date {
     position: absolute;
     bottom: 5px;
     right: 5px;
