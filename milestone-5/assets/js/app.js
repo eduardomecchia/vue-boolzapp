@@ -132,17 +132,14 @@ const app = new Vue({
     },
 
     methods: {
-        getContactImage(index) {
+        getAvatar(index) {
             const contact = this.contacts[index];
             const imagePath = `./assets/img/avatar${contact.avatar}.jpg`;
             return imagePath
         },
 
-        selectContact(index) {
+        changeContact(index) {
             this.currentRecipient = this.contacts[index];
-        },
-
-        updateRecipientImage(index) {
             const avatar = this.contacts[index].avatar;
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
         },

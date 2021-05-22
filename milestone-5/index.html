@@ -17,7 +17,7 @@
                 <!-- Info and options regarding the user -->
                 <div id="userOptions" class="greyBg">
                     <div class="user">
-                        <div class="contactImageWrapper">
+                        <div class="avatarWrapper">
                             <img :src="userImage" alt="">
                         </div>
 
@@ -53,9 +53,9 @@
 
                 <!-- Contact list -->
                 <ul class="contactList greyBg">
-                    <li class="contactEntry whiteBg" v-for="(contact, index) in filteredContacts" @click="selectContact(index), updateRecipientImage(index)">
-                        <div class="contactImageWrapper">
-                            <img :src="getContactImage(index)" alt="">
+                    <li class="contactEntry whiteBg" v-for="(contact, index) in filteredContacts" @click="changeContact(index)">
+                        <div class="avatarWrapper">
+                            <img :src="getAvatar(index)" alt="">
                         </div>
 
                         <span>{{ contact.name }}</span>
@@ -68,7 +68,7 @@
                 <!-- Info and options regarding the recipient -->
                 <div id="recipientOptions" class="greyBg">
                     <div class="recipient">
-                            <div class="contactImageWrapper">
+                            <div class="avatarWrapper">
                                 <img :src="recipientImage" alt="">
                             </div>
     
