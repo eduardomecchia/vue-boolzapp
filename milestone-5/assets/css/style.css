@@ -288,7 +288,7 @@ i:not(.search-bar i) {
     white-space: nowrap;
 }
 
-.messages .dropdown {
+.messages .dropdown-arrow {
     display: none;
     position: absolute;
     font-size: 20px;
@@ -296,6 +296,13 @@ i:not(.search-bar i) {
     right: 10px;
 }
 
-.message:hover .dropdown {
+.message:hover .dropdown-arrow {
     display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    width: 100px;
+    height: 100px;
+    border: 1px solid lightgrey;
 }

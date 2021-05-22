@@ -185,6 +185,12 @@ const app = new Vue({
             this.filteredContacts = this.contacts.filter(contact => {
                 return contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
             });
+        },
+
+        // Open message dropdown when clicking on the arrow
+        openDropdown(message, index) {
+            console.log(message);
+            console.log(this.currentRecipient.messages[index]);
         }
     },
 

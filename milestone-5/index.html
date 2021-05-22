@@ -88,12 +88,14 @@
 
                 <!-- Messages section -->
                 <div class="messages">
-                    <div class="message" v-for="message in currentRecipient.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
+                    <div class="message" v-for="(message, index) in currentRecipient.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
                         <span class="message-text">{{ message.text }}</span>
 
                         <span class="message-date text-grey">{{ message.date }}</span>
 
-                        <i class="fas fa-chevron-down dropdown text-grey"></i>
+                        <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="openDropdown(message, index)"></i>
+
+                        <div class="dropdown-menu bg-white"></div>
                     </div>
                 </div>
 
