@@ -286,3 +286,10 @@ main .msg-bar-wrapper i {
     font-size: 15px;
     white-space: nowrap;
 }
+
+.messages .dropdown {
+    position: absolute;
+    font-size: 15px;
+    top: 5px;
+    right: 5px;
+}
