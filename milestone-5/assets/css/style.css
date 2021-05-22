@@ -58,7 +58,7 @@ i:not(.search-bar i) {
 
 #sidebar {
     height: 100%;
-    width: 500px;
+    min-width: 490px;
     display: flex;
     flex-direction: column;
 }
