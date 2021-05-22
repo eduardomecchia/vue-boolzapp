@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 24px;
+    font-size: 23px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -257,9 +257,9 @@ main .msg-bar-wrapper i {
 /* Message classes */
 
 .message {
-    display: flex;
-    flex-direction: column;
-    padding: 25px 20px;
+    /* display: flex;
+    flex-direction: column; */
+    padding: 25px 20px 30px 20px;
     margin: 10px 0;
     border-radius: 15px;
     position: relative;
@@ -278,11 +278,14 @@ main .msg-bar-wrapper i {
     margin-left: 80px;
 }
 
+.message-text {
+    margin-bottom: 10px;
+}
+
 .message-date {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
-    margin-top: 5px;
+    bottom: 6px;
+    right: 9px;
     font-size: 15px;
     white-space: nowrap;
 }
@@ -290,6 +293,6 @@ main .msg-bar-wrapper i {
 .messages .dropdown {
     position: absolute;
     font-size: 15px;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
 }
