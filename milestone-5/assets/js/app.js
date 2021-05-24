@@ -120,7 +120,12 @@ const app = new Vue({
 
         contactImage: '',
         
-        currentContact: '',
+        currentContact: {
+            name: '',
+            avatar: '',
+            visible: true,
+            messages: [{}]
+        },
 
         msgBar: '',
 
@@ -140,8 +145,6 @@ const app = new Vue({
             this.currentContact = this.contacts[index];
             const avatar = this.contacts[index].avatar;
             this.contactImage = `./assets/img/avatar${avatar}.jpg`;
-
-            this.getLastSeen(this.currentContact);
         },
 
         // Get current time as a string using day.js
@@ -204,7 +207,6 @@ const app = new Vue({
                 }
         })},
 
-
         // Open message dropdown when clicking on the arrow
         openDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
@@ -216,16 +218,6 @@ const app = new Vue({
             } else if (elDropdowns[index].style.display === "flex") {
                 elDropdowns[index].style.display = "none";
             }
-        },
-
-        // Dynamically get last seen
-        getLastSeen(contact) {
-            let lastMessageIndex = contact.messages.length - 1;
-            const lastMessage = contact.messages[lastMessageIndex];
-
-            if (lastMessage.status === 'received') {
-                this.lastSeen = lastMessage.date;
-            } else lastMessageIndex--
         }
     },
 
@@ -241,9 +233,6 @@ const app = new Vue({
             this.lastMessage = document.querySelector('.message:last-child');
             this.lastMessage.scrollIntoView();
         })
-
-        // Get last seen of initial contact
-        this.getLastSeen(this.currentContact);
 
         // Close dropdown menu when clicking outside of it
         document.addEventListener('click', function (event) {

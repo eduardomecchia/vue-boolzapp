@@ -81,7 +81,7 @@
     
                             <div class="recipient-info">
                                 <span>{{ currentContact.name }}</span>
-                                <span class="recipient-status text-dark-grey">Ultimo accesso il {{ lastSeen }}</span> 
+                                <span class="recipient-status text-dark-grey">Ultimo accesso il {{ currentContact.messages[currentContact.messages.length - 1].date }}</span> 
                             </div>
                     </div>
 
