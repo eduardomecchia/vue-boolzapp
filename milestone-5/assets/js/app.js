@@ -128,8 +128,6 @@ const app = new Vue({
 
         searchQuery: '',
 
-        filteredContacts: '',
-
         lastSeen: ''
     },
 
@@ -243,9 +241,6 @@ const app = new Vue({
             this.lastMessage = document.querySelector('.message:last-child');
             this.lastMessage.scrollIntoView();
         })
-
-        // Make the contact list start with all contacts visible
-        this.filteredContacts = this.contacts;
 
         // Get last seen of initial contact
         this.getLastSeen(this.currentRecipient);
