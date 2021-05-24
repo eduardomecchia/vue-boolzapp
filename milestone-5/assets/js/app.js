@@ -187,8 +187,13 @@ const app = new Vue({
 
         // Open message dropdown when clicking on the arrow
         openDropdown(index) {
-            const elDropdown = document.querySelectorAll(".dropdown-menu");
-            elDropdown[index].style.display = "flex";
+            const elDropdowns = document.querySelectorAll(".dropdown-menu");
+
+            if (elDropdowns[index].style.display === "" || elDropdowns[index].style.display === "none") {
+                elDropdowns[index].style.display = "flex";
+            } else if (elDropdowns[index].style.display === "flex") {
+                elDropdowns[index].style.display = "none";
+            }
         },
 
         // Dynamically get last seen
