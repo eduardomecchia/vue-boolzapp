@@ -155,7 +155,8 @@ const app = new Vue({
 
         // Send messages pressing enter
         sendMessage() {
-            this.currentContact.messages.push(
+            const messages = this.currentContact.messages;
+            messages.push(
                 { 
                     date: this.getCurrentTime(),
                     text: this.msgBar,
@@ -166,26 +167,14 @@ const app = new Vue({
             // Clean the message bar
             this.msgBar = '';
             
-            // Trigger bot's response
+            // Trigger bot's automatic response after 1 second
             this.receiveMessage();
         },
 
         // Delete the message that has been clicked on and close the dropdown menu
         deleteMessage(index) {
             const messages = this.currentContact.messages;
-
-            if (messages.length > 1) {
-                messages.splice(index, 1);
-            } else {
-                messages.push(
-                    { 
-                        date: '',
-                        text: '',
-                        status: ''
-                    }
-                );
-                messages.splice(index, 1);
-            }
+            messages.splice(index, 1);
         },
 
         // Receive message from contact 1 second after you've sent it
@@ -239,6 +228,7 @@ const app = new Vue({
         this.$nextTick(function () {
             // Scroll the messages section to bottom
             this.lastMessage = document.querySelector('.message:last-child');
+            
             this.lastMessage.scrollIntoView();
         })
 
@@ -251,7 +241,7 @@ const app = new Vue({
             };
 
             elDropdowns.forEach(dropdown => {
-                /* console.log(dropdown.style.display); */
+                console.log(dropdown.style.display);
                 if (dropdown.style.display === 'flex') {
                     dropdown.style.display = 'none';
                 }

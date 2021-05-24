@@ -62,10 +62,10 @@
                         <div class="contact-info">
                             <span class="contact-name">{{ contact.name }}</span>
 
-                            <span class="contact-message text-grey">{{ contact.messages[contact.messages.length - 1].text }}</span>
+                            <span v-if="contact.messages.length > 0" class="contact-message text-grey">{{ contact.messages[contact.messages.length - 1].text }}</span>
                         </div>
 
-                        <span class="contact-date text-grey">{{ contact.messages[contact.messages.length - 1].date }}</span>
+                        <span v-if="contact.messages.length > 0" class="contact-date text-grey">{{ contact.messages[contact.messages.length - 1].date }}</span>
                     </li>
                 </ul>
             </aside>
@@ -81,7 +81,7 @@
     
                             <div class="recipient-info">
                                 <span>{{ currentContact.name }}</span>
-                                <span class="recipient-status text-dark-grey">Ultimo accesso il {{ currentContact.messages[currentContact.messages.length - 1].date }}</span> 
+                                <span v-if="currentContact.messages.length > 0" class="recipient-status text-dark-grey">Ultimo accesso il {{ currentContact.messages[currentContact.messages.length - 1].date }}</span> 
                             </div>
                     </div>
 
@@ -95,9 +95,9 @@
                 <!-- Messages section -->
                 <div class="messages">
                     <div class="message" v-for="(message, index) in currentContact.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
-                        <span class="message-text">{{ message.text }}</span>
+                        <span v-if="currentContact.messages.length > 0" class="message-text">{{ message.text }}</span>
 
-                        <span class="message-date text-grey">{{ message.date }}</span>
+                        <span v-if="currentContact.messages.length > 0" class="message-date text-grey">{{ message.date }}</span>
 
                         <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="openDropdown(index)"></i>
 
