@@ -128,7 +128,9 @@ const app = new Vue({
 
         searchQuery: '',
 
-        filteredContacts: ''
+        filteredContacts: '',
+
+        lastSeen: ''
     },
 
     methods: {
@@ -142,6 +144,8 @@ const app = new Vue({
             this.currentRecipient = this.contacts[index];
             const avatar = this.contacts[index].avatar;
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
+
+            this.getLastSeen(this.currentRecipient);
         },
 
         // Get current time as a string using day.js
@@ -178,9 +182,6 @@ const app = new Vue({
                     }
                 );
             }, 1000);
-
-            // Update last access
-            this.getLastDaySeen(this.currentRecipient);
         },
 
         // Search for a name in the contact list
@@ -196,22 +197,14 @@ const app = new Vue({
             console.log(this.currentRecipient.messages[index]);
         },
 
-        // Dynamically get last day seen
-        getLastDaySeen(contact) {
-            const lastMessageIndex = contact.messages.length - 1;
+        // Dynamically get last seen
+        getLastSeen(contact) {
+            let lastMessageIndex = contact.messages.length - 1;
             const lastMessage = contact.messages[lastMessageIndex];
-            const lastDaySeen = lastMessage.date.slice(0, 8);
-            console.log(lastDaySeen);
-            return lastDaySeen
-        },
 
-        // Dynamically get last hour seen
-        getLastHourSeen(contact) {
-            const lastMessageIndex = contact.messages.length - 1;
-            const lastMessage = contact.messages[lastMessageIndex];
-            const lastHourSeen = lastMessage.date.slice(11, 19);
-            console.log(lastHourSeen);
-            return lastHourSeen
+            if (lastMessage.status === 'received') {
+                this.lastSeen = lastMessage.date;
+            }
         }
     },
 
@@ -231,7 +224,7 @@ const app = new Vue({
         // Make the contact list start with all contacts visible
         this.filteredContacts = this.contacts;
 
-        // Get day and hour of last message
-        this.getLastDaySeen(this.currentRecipient);
+        // Get last seen of initial contact
+        this.getLastSeen(this.currentRecipient);
     }
 });
