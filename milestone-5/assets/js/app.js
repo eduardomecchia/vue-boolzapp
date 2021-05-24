@@ -225,5 +225,17 @@ const app = new Vue({
 
         // Get last seen of initial contact
         this.getLastSeen(this.currentRecipient);
+
+        // Close dropdown menu when clicking outside of it
+        /* document.addEventListener('click', function (event) {
+            const elDropdowns = document.querySelectorAll(".dropdown-menu");
+
+            elDropdowns.forEach(dropdown => {
+                console.log(dropdown.style.display);
+                if (dropdown.style.display === 'flex') {
+                    dropdown.style.display = 'none';
+                }
+            });
+        }, true); */
     }
 });
