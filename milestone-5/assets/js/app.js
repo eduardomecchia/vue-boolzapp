@@ -178,6 +178,11 @@ const app = new Vue({
             }, 1000);
         },
 
+        // Delete the message that has been clicked on
+        deleteMessage(index) {
+            this.currentRecipient.messages.splice(index, 1);
+        },
+
         // Search for a name in the contact list
         search() {
             this.filteredContacts = this.contacts.filter(contact => {
@@ -227,15 +232,20 @@ const app = new Vue({
         this.getLastSeen(this.currentRecipient);
 
         // Close dropdown menu when clicking outside of it
-        /* document.addEventListener('click', function (event) {
+        document.addEventListener('click', function (event) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
+            
+            if (event.target.classList.contains('dropdown-arrow') || event.target.classList.contains('delete-message')) {
+                return
+            };
 
             elDropdowns.forEach(dropdown => {
-                console.log(dropdown.style.display);
+                /* console.log(dropdown.style.display); */
                 if (dropdown.style.display === 'flex') {
                     dropdown.style.display = 'none';
                 }
             });
-        }, true); */
+        }, true);
     }
 });
+
