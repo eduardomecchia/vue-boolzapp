@@ -118,7 +118,7 @@ const app = new Vue({
             }
         ],
 
-        recipientImage: '',
+        contactImage: '',
         
         currentContact: '',
 
@@ -139,7 +139,7 @@ const app = new Vue({
         changeContact(index) {
             this.currentContact = this.contacts[index];
             const avatar = this.contacts[index].avatar;
-            this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
+            this.contactImage = `./assets/img/avatar${avatar}.jpg`;
 
             this.getLastSeen(this.currentContact);
         },
@@ -233,7 +233,7 @@ const app = new Vue({
         // Make the first contact be the default one 
         this.currentContact = this.contacts[0];
         const firstContact = this.currentContact;
-        this.recipientImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
+        this.contactImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
 
         // Code that runs after the entire view has been rendered
         this.$nextTick(function () {
