@@ -133,6 +133,10 @@ const app = new Vue({
         lastSeen: ''
     },
 
+    computed: {
+        
+    },
+
     methods: {
         changeContact(index) {
             this.currentRecipient = this.contacts[index];
@@ -146,6 +150,12 @@ const app = new Vue({
         getCurrentTime() {
             const currentTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
             return currentTime
+        },
+
+        // Return the last message's text in the given contact
+        getLastMessage(contact) {
+            const messages = contact.messages;
+            return messages[messages.length - 1]
         },
 
         // Send messages pressing enter
@@ -165,7 +175,7 @@ const app = new Vue({
             this.receiveMessage();
         },
 
-        // Delete the message that has been clicked on
+        // Delete the message that has been clicked on and close the dropdown menu
         deleteMessage(index) {
             this.currentRecipient.messages.splice(index, 1);
         },
@@ -193,6 +203,8 @@ const app = new Vue({
         // Open message dropdown when clicking on the arrow
         openDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
+
+            console.log(elDropdowns[index].style.display);
 
             if (elDropdowns[index].style.display === "" || elDropdowns[index].style.display === "none") {
                 elDropdowns[index].style.display = "flex";
@@ -232,11 +244,10 @@ const app = new Vue({
         this.getLastSeen(this.currentRecipient);
 
         // Close dropdown menu when clicking outside of it
-        /* document.addEventListener('click', function (event) {
+        /* document.addEventListener('click', function () {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
             elDropdowns.forEach(dropdown => {
-                console.log(dropdown.style.display);
                 if (dropdown.style.display === 'flex') {
                     dropdown.style.display = 'none';
                 }
