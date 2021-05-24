@@ -99,9 +99,12 @@
 
                         <span class="message-date text-grey">{{ message.date }}</span>
 
-                        <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="openDropdown(message, index)"></i>
+                        <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="openDropdown(index)"></i>
 
-                        <div class="dropdown-menu bg-white"></div>
+                        <div class="dropdown-menu bg-white">
+                            <span>Message info</span>
+                            <span>Delete message</span>
+                        </div>
                     </div>
                 </div>
 

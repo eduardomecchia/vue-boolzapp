@@ -186,9 +186,9 @@ const app = new Vue({
         },
 
         // Open message dropdown when clicking on the arrow
-        openDropdown(message, index) {
-            console.log(message);
-            console.log(this.currentRecipient.messages[index]);
+        openDropdown(index) {
+            const elDropdown = document.querySelectorAll(".dropdown-menu");
+            elDropdown[index].style.display = "flex";
         },
 
         // Dynamically get last seen
