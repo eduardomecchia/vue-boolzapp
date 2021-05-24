@@ -178,6 +178,9 @@ const app = new Vue({
                     }
                 );
             }, 1000);
+
+            // Update last access
+            this.getLastDaySeen(this.currentRecipient);
         },
 
         // Search for a name in the contact list
@@ -191,6 +194,24 @@ const app = new Vue({
         openDropdown(message, index) {
             console.log(message);
             console.log(this.currentRecipient.messages[index]);
+        },
+
+        // Dynamically get last day seen
+        getLastDaySeen(contact) {
+            const lastMessageIndex = contact.messages.length - 1;
+            const lastMessage = contact.messages[lastMessageIndex];
+            const lastDaySeen = lastMessage.date.slice(0, 8);
+            console.log(lastDaySeen);
+            return lastDaySeen
+        },
+
+        // Dynamically get last hour seen
+        getLastHourSeen(contact) {
+            const lastMessageIndex = contact.messages.length - 1;
+            const lastMessage = contact.messages[lastMessageIndex];
+            const lastHourSeen = lastMessage.date.slice(11, 19);
+            console.log(lastHourSeen);
+            return lastHourSeen
         }
     },
 
@@ -205,9 +226,12 @@ const app = new Vue({
             // Scroll the messages section to bottom
             this.lastMessage = document.querySelector('.message:last-child');
             this.lastMessage.scrollIntoView();
-          })
+        })
 
         // Make the contact list start with all contacts visible
         this.filteredContacts = this.contacts;
+
+        // Get day and hour of last message
+        this.getLastDaySeen(this.currentRecipient);
     }
 });

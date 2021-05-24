@@ -75,7 +75,7 @@
     
                             <div class="recipient-info">
                                 <span>{{ currentRecipient.name }}</span>
-                                <span class="recipient-status text-dark-grey">Ultimo accesso oggi alle</span> 
+                                <span class="recipient-status text-dark-grey">Ultimo accesso il {{ getLastDaySeen(currentRecipient) }} alle {{ getLastHourSeen(currentRecipient) }}</span> 
                             </div>
                     </div>
 
