@@ -217,8 +217,6 @@ const app = new Vue({
         toggleDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
-            console.log(elDropdowns[index].style.display);
-
             if (elDropdowns[index].style.display === '' || elDropdowns[index].style.display === "none") {
                 elDropdowns[index].style.display = "flex";
             } else if (elDropdowns[index].style.display === "flex") {
@@ -248,7 +246,6 @@ const app = new Vue({
             };
 
             elDropdowns.forEach(dropdown => {
-                console.log(dropdown.style.display);
                 if (dropdown.style.display === 'flex') {
                     dropdown.style.display = 'none';
                 }
