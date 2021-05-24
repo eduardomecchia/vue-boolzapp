@@ -54,7 +54,7 @@
 
                 <!-- Contact list -->
                 <ul class="contact-list bg-grey">
-                    <li class="contact-entry bg-white" v-for="(contact, index) in filteredContacts" @click="changeContact(index)">
+                    <li class="contact-entry bg-white" v-for="(contact, index) in contacts" v-if="contact.visible" @click="changeContact(index)">
                         <div class="avatar-wrapper">
                             <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                         </div>
@@ -62,10 +62,10 @@
                         <div class="contact-info">
                             <span class="contact-name">{{ contact.name }}</span>
 
-                            <span class="contact-message text-grey">{{ getLastMessage(contact) }}</span>
+                            <span class="contact-message text-grey">{{  }}</span>
                         </div>
 
-                        <span class="contact-date text-grey">aaa</span>
+                        <span class="contact-date text-grey"></span>
                     </li>
                 </ul>
             </aside>

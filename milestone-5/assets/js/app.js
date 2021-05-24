@@ -152,12 +152,6 @@ const app = new Vue({
             return currentTime
         },
 
-        // Return the last message's text in the given contact
-        getLastMessage(contact) {
-            const messages = contact.messages;
-            return messages[messages.length - 1]
-        },
-
         // Send messages pressing enter
         sendMessage() {
             this.currentRecipient.messages.push(
@@ -200,10 +194,18 @@ const app = new Vue({
 
         // Search for a name in the contact list
         search() {
-            this.filteredContacts = this.contacts.filter(contact => {
-                return contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-            });
-        },
+            let searchQuery = this.searchQuery.toLowerCase();
+
+            this.contacts.forEach( contact => {
+                let savedName = contact.name.toLowerCase();
+
+                if (savedName.includes(searchQuery)){
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+        })},
+
 
         // Open message dropdown when clicking on the arrow
         openDropdown(index) {
