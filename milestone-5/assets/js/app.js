@@ -120,7 +120,7 @@ const app = new Vue({
 
         recipientImage: '',
         
-        currentRecipient: '',
+        currentContact: '',
 
         msgBar: '',
 
@@ -137,11 +137,11 @@ const app = new Vue({
 
     methods: {
         changeContact(index) {
-            this.currentRecipient = this.contacts[index];
+            this.currentContact = this.contacts[index];
             const avatar = this.contacts[index].avatar;
             this.recipientImage = `./assets/img/avatar${avatar}.jpg`;
 
-            this.getLastSeen(this.currentRecipient);
+            this.getLastSeen(this.currentContact);
         },
 
         // Get current time as a string using day.js
@@ -152,7 +152,7 @@ const app = new Vue({
 
         // Send messages pressing enter
         sendMessage() {
-            this.currentRecipient.messages.push(
+            this.currentContact.messages.push(
                 { 
                     date: this.getCurrentTime(),
                     text: this.msgBar,
@@ -169,13 +169,13 @@ const app = new Vue({
 
         // Delete the message that has been clicked on and close the dropdown menu
         deleteMessage(index) {
-            this.currentRecipient.messages.splice(index, 1);
+            this.currentContact.messages.splice(index, 1);
         },
 
         // Receive message from contact 1 second after you've sent it
         receiveMessage() {
             setTimeout(function () {
-                app.currentRecipient.messages.push(
+                app.currentContact.messages.push(
                     {
                         date: app.getCurrentTime(),
                         text: 'Ok',
@@ -187,7 +187,7 @@ const app = new Vue({
 
         // Delete the message that has been clicked on
         deleteMessage(index) {
-            this.currentRecipient.messages.splice(index, 1);
+            this.currentContact.messages.splice(index, 1);
         },
 
         // Search for a name in the contact list
@@ -231,8 +231,8 @@ const app = new Vue({
 
     mounted() {
         // Make the first contact be the default one 
-        this.currentRecipient = this.contacts[0];
-        const firstContact = this.currentRecipient;
+        this.currentContact = this.contacts[0];
+        const firstContact = this.currentContact;
         this.recipientImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
 
         // Code that runs after the entire view has been rendered
@@ -243,7 +243,7 @@ const app = new Vue({
         })
 
         // Get last seen of initial contact
-        this.getLastSeen(this.currentRecipient);
+        this.getLastSeen(this.currentContact);
 
         // Close dropdown menu when clicking outside of it
         document.addEventListener('click', function (event) {

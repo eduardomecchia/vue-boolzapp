@@ -80,7 +80,7 @@
                             </div>
     
                             <div class="recipient-info">
-                                <span>{{ currentRecipient.name }}</span>
+                                <span>{{ currentContact.name }}</span>
                                 <span class="recipient-status text-dark-grey">Ultimo accesso il {{ lastSeen }}</span> 
                             </div>
                     </div>
@@ -94,7 +94,7 @@
 
                 <!-- Messages section -->
                 <div class="messages">
-                    <div class="message" v-for="(message, index) in currentRecipient.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
+                    <div class="message" v-for="(message, index) in currentContact.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
                         <span class="message-text">{{ message.text }}</span>
 
                         <span class="message-date text-grey">{{ message.date }}</span>
