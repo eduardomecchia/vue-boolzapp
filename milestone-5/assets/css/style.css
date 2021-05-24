@@ -187,6 +187,7 @@ i:not(.search-bar i) {
 .contact-info {
     display: flex;
     flex-direction: column;
+    align-self: flex-start
 }
 
 .contact-message, .contact-date {
@@ -198,6 +199,7 @@ i:not(.search-bar i) {
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 200px;
+    margin-top: 10px;
 }
 
 .contact-date {
