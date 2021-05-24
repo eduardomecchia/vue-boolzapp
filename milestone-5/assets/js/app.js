@@ -141,19 +141,26 @@ const app = new Vue({
     },
 
     methods: {
+        /**
+         * Change the current displayed contact to be the one you clicked on
+         */
         changeContact(index) {
             this.currentContact = this.contacts[index];
             const avatar = this.contacts[index].avatar;
             this.contactImage = `./assets/img/avatar${avatar}.jpg`;
         },
 
-        // Get current time as a string using day.js
+        /**
+         * Get current time as a string using day.js
+         */
         getCurrentTime() {
             const currentTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
             return currentTime
         },
 
-        // Send messages pressing enter
+        /**
+         * Send messages pressing enter
+         */
         sendMessage() {
             const messages = this.currentContact.messages;
             messages.push(
@@ -171,13 +178,17 @@ const app = new Vue({
             this.receiveMessage();
         },
 
-        // Delete the message that has been clicked on and close the dropdown menu
+        /**
+         * Delete the message that has been clicked on and close the dropdown menu
+         */
         deleteMessage(index) {
             const messages = this.currentContact.messages;
             messages.splice(index, 1);
         },
 
-        // Receive message from contact 1 second after you've sent it
+        /**
+         * Receive message from contact 1 second after you've sent it
+         */
         receiveMessage() {
             setTimeout(function () {
                 app.currentContact.messages.push(
@@ -190,7 +201,9 @@ const app = new Vue({
             }, 1000);
         },
 
-        // Search for a name in the contact list
+        /**
+         * Search for a name in the contact list
+         */
         search() {
             const searchQuery = this.searchQuery.toLowerCase();
 
@@ -202,9 +215,12 @@ const app = new Vue({
                 } else {
                     contact.visible = false;
                 }
-        })},
+            });
+        },
 
-        // Open message dropdown when clicking on the arrow
+        /**
+         * Open message dropdown when clicking on the arrow
+         */
         openDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
