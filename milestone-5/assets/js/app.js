@@ -134,12 +134,6 @@ const app = new Vue({
     },
 
     methods: {
-        getAvatar(index) {
-            const contact = this.contacts[index];
-            const imagePath = `./assets/img/avatar${contact.avatar}.jpg`;
-            return imagePath
-        },
-
         changeContact(index) {
             this.currentRecipient = this.contacts[index];
             const avatar = this.contacts[index].avatar;
@@ -204,7 +198,7 @@ const app = new Vue({
 
             if (lastMessage.status === 'received') {
                 this.lastSeen = lastMessage.date;
-            }
+            } else lastMessageIndex--
         }
     },
 

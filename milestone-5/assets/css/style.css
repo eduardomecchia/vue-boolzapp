@@ -58,7 +58,7 @@ i:not(.search-bar i) {
 
 #sidebar {
     height: 100%;
-    min-width: 490px;
+    max-width: 490px;
     display: flex;
     flex-direction: column;
 }
@@ -181,6 +181,16 @@ i:not(.search-bar i) {
 
 .contact-name {
     font-size: 26px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-message, .contact-date {
+    font-size: 18px;
+    white-space: nowrap;
 }
 
 .avatar-wrapper {
