@@ -192,10 +192,10 @@ const app = new Vue({
 
         // Search for a name in the contact list
         search() {
-            let searchQuery = this.searchQuery.toLowerCase();
+            const searchQuery = this.searchQuery.toLowerCase();
 
             this.contacts.forEach(contact => {
-                let savedName = contact.name.toLowerCase();
+                const savedName = contact.name.toLowerCase();
 
                 if (savedName.includes(searchQuery)){
                     contact.visible = true;
