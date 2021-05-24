@@ -93,28 +93,28 @@ const app = new Vue({
                 name: 'Vincenzo',
                 avatar: '_5',
                 visible: true,
-                messages: [],
+                messages: [{}],
             },
 
             {
                 name: 'Sara',
                 avatar: '_6',
                 visible: true,
-                messages: [],
+                messages: [{}],
             },
 
             {
                 name: 'Ugo',
                 avatar: '_7',
                 visible: true,
-                messages: [],
+                messages: [{}],
             },
 
             {
                 name: 'Francesco',
                 avatar: '_8',
                 visible: true,
-                messages: [],
+                messages: [{}],
             }
         ],
 

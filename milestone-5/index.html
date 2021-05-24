@@ -62,10 +62,10 @@
                         <div class="contact-info">
                             <span class="contact-name">{{ contact.name }}</span>
 
-                            <span class="contact-message text-grey">{{ contacts[index].messages[contacts[index].messages.length - 1] }}</span>
+                            <span class="contact-message text-grey">{{ contact.messages[contact.messages.length - 1].text }}</span>
                         </div>
 
-                        <span class="contact-date text-grey"></span>
+                        <span class="contact-date text-grey">{{ contact.messages[contact.messages.length - 1].date }}</span>
                     </li>
                 </ul>
             </aside>
