@@ -133,6 +133,10 @@ const app = new Vue({
         lastSeen: ''
     },
 
+    computed: {
+        
+    },
+
     methods: {
         changeContact(index) {
             this.currentRecipient = this.contacts[index];
@@ -146,6 +150,12 @@ const app = new Vue({
         getCurrentTime() {
             const currentTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
             return currentTime
+        },
+
+        // Return the last message's text in the given contact
+        getLastMessage(contact) {
+            const messages = contact.messages;
+            return messages[messages.length - 1]
         },
 
         // Send messages pressing enter
@@ -163,6 +173,11 @@ const app = new Vue({
             
             // Trigger bot's response
             this.receiveMessage();
+        },
+
+        // Delete the message that has been clicked on and close the dropdown menu
+        deleteMessage(index) {
+            this.currentRecipient.messages.splice(index, 1);
         },
 
         // Receive message from contact 1 second after you've sent it
@@ -193,6 +208,8 @@ const app = new Vue({
         // Open message dropdown when clicking on the arrow
         openDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
+
+            console.log(elDropdowns[index].style.display);
 
             if (elDropdowns[index].style.display === "" || elDropdowns[index].style.display === "none") {
                 elDropdowns[index].style.display = "flex";
