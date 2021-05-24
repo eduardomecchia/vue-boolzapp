@@ -172,7 +172,20 @@ const app = new Vue({
 
         // Delete the message that has been clicked on and close the dropdown menu
         deleteMessage(index) {
-            this.currentContact.messages.splice(index, 1);
+            const messages = this.currentContact.messages;
+
+            if (messages.length > 1) {
+                messages.splice(index, 1);
+            } else {
+                messages.push(
+                    { 
+                        date: '',
+                        text: '',
+                        status: ''
+                    }
+                );
+                messages.splice(index, 1);
+            }
         },
 
         // Receive message from contact 1 second after you've sent it
@@ -188,16 +201,11 @@ const app = new Vue({
             }, 1000);
         },
 
-        // Delete the message that has been clicked on
-        deleteMessage(index) {
-            this.currentContact.messages.splice(index, 1);
-        },
-
         // Search for a name in the contact list
         search() {
             let searchQuery = this.searchQuery.toLowerCase();
 
-            this.contacts.forEach( contact => {
+            this.contacts.forEach(contact => {
                 let savedName = contact.name.toLowerCase();
 
                 if (savedName.includes(searchQuery)){
