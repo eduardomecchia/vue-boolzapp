@@ -168,6 +168,7 @@ i:not(.search-bar i) {
     cursor: pointer;
     padding: 15px 30px;
     margin-bottom: 2px;
+    position: relative;
 }
 
 .contact-entry:hover {
@@ -191,6 +192,17 @@ i:not(.search-bar i) {
 .contact-message, .contact-date {
     font-size: 18px;
     white-space: nowrap;
+}
+
+.contact-message {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.contact-date {
+    position: absolute;
+    right: 15px;
 }
 
 .avatar-wrapper {
