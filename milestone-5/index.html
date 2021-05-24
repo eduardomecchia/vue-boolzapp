@@ -76,7 +76,7 @@
                 <div id="recipient-options" class="bg-grey">
                     <div class="recipient">
                             <div class="avatar-wrapper">
-                                <img :src="contactImage" alt="">
+                                <img :src="'./assets/img/avatar' + currentContact.avatar + '.jpg'" alt="">
                             </div>
     
                             <div class="recipient-info">
@@ -111,7 +111,7 @@
                 <!-- Message input field -->
                 <div class="msg-bar-wrapper bg-light-grey">
                     <i class="far fa-smile text-dark-grey"></i>
-                    <input type="text" id="msg-bar" v-model="msgBar" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
+                    <input type="text" id="msg-bar" v-model="messageBar" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
                     <i class="fas fa-microphone text-dark-grey"></i>
                 </div>
             </main>

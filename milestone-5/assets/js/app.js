@@ -118,8 +118,6 @@ const app = new Vue({
             }
         ],
 
-        contactImage: '',
-        
         currentContact: {
             name: '',
             avatar: '',
@@ -127,17 +125,11 @@ const app = new Vue({
             messages: [{}]
         },
 
-        msgBar: '',
-
-        lastMessage: '',
+        messageBar: '',
 
         searchQuery: '',
 
-        lastSeen: ''
-    },
-
-    computed: {
-        
+        lastMessage: ''
     },
 
     methods: {
@@ -146,8 +138,6 @@ const app = new Vue({
          */
         changeContact(index) {
             this.currentContact = this.contacts[index];
-            const avatar = this.contacts[index].avatar;
-            this.contactImage = `./assets/img/avatar${avatar}.jpg`;
         },
 
         /**
@@ -166,13 +156,13 @@ const app = new Vue({
             messages.push(
                 { 
                     date: this.getCurrentTime(),
-                    text: this.msgBar,
+                    text: this.messageBar,
                     status: 'sent'
                 }
             );
             
             // Clean the message bar
-            this.msgBar = '';
+            this.messageBar = '';
             
             // Trigger bot's automatic response after 1 second
             this.receiveMessage();
@@ -235,10 +225,8 @@ const app = new Vue({
     },
 
     mounted() {
-        // Make the first contact be the default one 
+        // Make the first contact be the default one on page load
         this.currentContact = this.contacts[0];
-        const firstContact = this.currentContact;
-        this.contactImage = `./assets/img/avatar${firstContact.avatar}.jpg`;
 
         // Code that runs after the entire view has been rendered
         this.$nextTick(function () {
