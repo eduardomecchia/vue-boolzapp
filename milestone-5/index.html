@@ -99,7 +99,7 @@
 
                         <span v-if="currentContact.messages.length > 0" class="message-date text-grey">{{ message.date }}</span>
 
-                        <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="openDropdown(index)"></i>
+                        <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="toggleDropdown(index)"></i>
 
                         <div class="dropdown-menu bg-white">
                             <span class="message-info">Message info</span>

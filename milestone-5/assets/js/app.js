@@ -174,6 +174,9 @@ const app = new Vue({
         deleteMessage(index) {
             const messages = this.currentContact.messages;
             messages.splice(index, 1);
+
+            // Make sure that the dropdown menu is closed
+            this.toggleDropdown(index);
         },
 
         /**
@@ -209,14 +212,14 @@ const app = new Vue({
         },
 
         /**
-         * Open message dropdown when clicking on the arrow
+         * Toggle message dropdown when clicking on the arrow
          */
-        openDropdown(index) {
+        toggleDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
 
             console.log(elDropdowns[index].style.display);
 
-            if (elDropdowns[index].style.display === "" || elDropdowns[index].style.display === "none") {
+            if (elDropdowns[index].style.display === '' || elDropdowns[index].style.display === "none") {
                 elDropdowns[index].style.display = "flex";
             } else if (elDropdowns[index].style.display === "flex") {
                 elDropdowns[index].style.display = "none";
