@@ -165,6 +165,11 @@ const app = new Vue({
             this.receiveMessage();
         },
 
+        // Delete the message that has been clicked on
+        deleteMessage(index) {
+            this.currentRecipient.messages.splice(index, 1);
+        },
+
         // Receive message from contact 1 second after you've sent it
         receiveMessage() {
             setTimeout(function () {
