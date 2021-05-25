@@ -1,136 +1,136 @@
 const app = new Vue({
-    el: '#app',
+    el: "#app",
 
     data:  {
-        username: 'Eduardo',
-        userImage: './assets/img/avatar_io.jpg',
+        username: "Eduardo",
+        userImage: "./assets/img/avatar_io.jpg",
         
         contacts: [
             {
-                name: 'Michele',
-                avatar: '_1',
+                name: "Michele",
+                avatar: "_1",
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        date: "10/01/2020 15:30:55",
+                        text: "Hai portato a spasso il cane?",
+                        status: "sent"
                     },
                     {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        date: "10/01/2020 15:50:00",
+                        text: "Ricordati di dargli da mangiare",
+                        status: "sent"
                     },
                     {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
+                        date: "10/01/2020 16:15:22",
+                        text: "Tutto fatto!",
+                        status: "received"
                     }
                 ],
             },
             {
-                name: 'Fabio',
-                avatar: '_2',
+                name: "Fabio",
+                avatar: "_2",
                 visible: true,
                 messages: [
                     {
-                        date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
-                        status: 'sent'
+                        date: "20/03/2020 16:30:00",
+                        text: "Ciao come stai?",
+                        status: "sent"
                     },
                     {
-                        date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        date: "20/03/2020 16:30:55",
+                        text: "Bene grazie! Stasera ci vediamo?",
+                        status: "received"
                     },
                     {
-                        date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
+                        date: "20/03/2020 16:35:00",
+                        text: "Mi piacerebbe ma devo andare a fare la spesa.",
+                        status: "sent"
                     }
                 ],
             },
             {
-                name: 'Samuele',
-                avatar: '_3',
+                name: "Samuele",
+                avatar: "_3",
                 visible: true,
                 messages: [
                     {
-                        date: '28/03/2020 10:10:40',
-                        text: 'La Marianna va in campagna',
-                        status: 'received'
+                        date: "28/03/2020 10:10:40",
+                        text: "La Marianna va in campagna",
+                        status: "received"
                     },
                     {
-                        date: '28/03/2020 10:20:10',
-                        text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        date: "28/03/2020 10:20:10",
+                        text: "Sicuro di non aver sbagliato chat?",
+                        status: "sent"
                     },
                     {
-                        date: '28/03/2020 16:15:22',
-                        text: 'Ah scusa!',
-                        status: 'received'
+                        date: "28/03/2020 16:15:22",
+                        text: "Ah scusa!",
+                        status: "received"
                     }
                 ],
             },
             {
-                name: 'Luisa',
-                avatar: '_4',
+                name: "Luisa",
+                avatar: "_4",
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
-                        text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        date: "10/01/2020 15:30:55",
+                        text: "Lo sai che ha aperto una nuova pizzeria?",
+                        status: "sent"
                     },
                     {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
+                        date: "10/01/2020 15:50:00",
+                        text: "Si, ma preferirei andare al cinema",
+                        status: "received"
                     }
                 ],
             },
 
             {
-                name: 'Vincenzo',
-                avatar: '_5',
+                name: "Vincenzo",
+                avatar: "_5",
                 visible: true,
                 messages: [{}],
             },
 
             {
-                name: 'Sara',
-                avatar: '_6',
+                name: "Sara",
+                avatar: "_6",
                 visible: true,
                 messages: [{}],
             },
 
             {
-                name: 'Ugo',
-                avatar: '_7',
+                name: "Ugo",
+                avatar: "_7",
                 visible: true,
                 messages: [{}],
             },
 
             {
-                name: 'Francesco',
-                avatar: '_8',
+                name: "Francesco",
+                avatar: "_8",
                 visible: true,
                 messages: [{}],
             }
         ],
 
         currentContact: {
-            name: '',
-            avatar: '',
+            name: "",
+            avatar: "",
             visible: true,
             messages: [{}]
         },
 
-        messageBar: '',
+        messageBar: "",
 
-        searchQuery: '',
+        searchQuery: "",
 
-        lastMessage: '',
+        lastMessage: "",
 
         // Audio stuff
         mediaRecorder: {}
@@ -148,8 +148,8 @@ const app = new Vue({
          * Get current time as a string using day.js
          */
         getCurrentTime() {
-            const currentTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
-            return currentTime
+            const currentTime = dayjs().format("DD/MM/YYYY HH:mm:ss");
+            return currentTime;
         },
 
         /**
@@ -161,14 +161,14 @@ const app = new Vue({
                 { 
                     date: this.getCurrentTime(),
                     text: this.messageBar,
-                    status: 'sent'
+                    status: "sent"
                 }
             );
             
             // Clean the message bar
-            this.messageBar = '';
+            this.messageBar = "";
             
-            // Trigger bot's automatic response after 1 second
+            // Trigger bot"s automatic response after 1 second
             this.receiveMessage();
 
             // Scroll the page down to the new message
@@ -187,15 +187,15 @@ const app = new Vue({
         },
 
         /**
-         * Receive message from contact 1 second after you've sent it
+         * Receive message from contact 1 second after you"ve sent it
          */
         receiveMessage() {
             setTimeout(function () {
                 app.currentContact.messages.push(
                     {
                         date: app.getCurrentTime(),
-                        text: 'Ok',
-                        status: 'received'
+                        text: "Ok",
+                        status: "received"
                     }
                 );
             }, 1000);
@@ -208,7 +208,7 @@ const app = new Vue({
          * Scroll down to the last message
          */
         scrollDown() {
-            const messageBox = document.querySelector('.messages');
+            const messageBox = document.querySelector(".messages");
             messageBox.scrollTop = messageBox.scrollHeight;
         },
 
@@ -234,11 +234,12 @@ const app = new Vue({
          */
         toggleDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
+            let dropdownStyle = elDropdowns[index].style;
 
-            if (elDropdowns[index].style.display === '' || elDropdowns[index].style.display === "none") {
-                elDropdowns[index].style.display = "flex";
-            } else if (elDropdowns[index].style.display === "flex") {
-                elDropdowns[index].style.display = "none";
+            if (dropdownStyle.display === "" || dropdownStyle.display === "none") {
+                dropdownStyle.display = "flex";
+            } else if (dropdownStyle.display === "flex") {
+                dropdownStyle.display = "none";
             }
         }
     },
@@ -251,21 +252,21 @@ const app = new Vue({
         this.$nextTick(function () {
             // Scroll the messages section to bottom
             this.scrollDown();
-        })
+        });
 
         // Close dropdown menu when clicking outside of it
-        document.addEventListener('click', function (event) {
+        document.addEventListener("click", function (event) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
             
             // If you clicked on a dropdown arrow or a "delete message" button
             // exit this event listener
-            if (event.target.classList.contains('dropdown-arrow') || event.target.classList.contains('delete-message')) {
-                return
-            };
+            if (event.target.classList.contains("dropdown-arrow") || event.target.classList.contains("delete-message")) {
+                return;
+            }
 
             elDropdowns.forEach(dropdown => {
-                if (dropdown.style.display === 'flex') {
-                    dropdown.style.display = 'none';
+                if (dropdown.style.display === "flex") {
+                    dropdown.style.display = "none";
                 }
             });
         }, true);
