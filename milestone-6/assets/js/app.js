@@ -129,12 +129,7 @@ const app = new Vue({
 
         popup: {
             visible: false,
-            delete(contact, index) {
-                contact.messages.splice(index, 1);
-            },
-            cancel() {
-                this.visible = true;
-            }
+            index: 0
         },
 
         searchQuery: "",
@@ -154,18 +149,27 @@ const app = new Vue({
         },
 
         /**
+         * Trigger deletion confirmation popup
+         * @param {number} index - The index that references the message you clicked on
+         */
+        triggerPopup(index) {
+            // Make sure that the dropdown menu is closed
+            this.toggleDropdown(index);
+
+            this.popup.visible = true;
+            this.popup.index = index;
+
+            /* this.deleteMessage(index); */
+        },
+
+        /**
          * Delete the message that has been clicked on
          * and close the dropdown menu
          * @param {number} index - The index that references the message you clicked on
          */
         deleteMessage(index) {
             const messages = this.currentContact.messages;
-            
-            // Trigger confirmation popup
-            this.popup.visible = true;
-
-            // Make sure that the dropdown menu is closed
-            this.toggleDropdown(index);
+            messages.splice(index, 1);
         },
 
         /**

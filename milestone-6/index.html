@@ -104,7 +104,7 @@
 
                         <div class="dropdown-menu bg-white">
                             <span class="message-info">Info</span>
-                            <span class="delete-message" @click="deleteMessage(index)">Cancella messaggio</span>
+                            <span class="delete-message" @click="triggerPopup(index)">Cancella messaggio</span>
                         </div>
                     </div>
                 </div>
@@ -123,8 +123,8 @@
                     <span class="popup-question">Cancella messaggio?</span>
 
                     <div class="popup-controls">
-                        <button @click="">Annulla</button>
-                        <button @click="">Cancella</button>
+                        <button @click="popup.visible = false">Annulla</button>
+                        <button @click="deleteMessage(popup.index), popup.visible = false">Cancella</button>
                     </div>
                 </div>
             </div>
