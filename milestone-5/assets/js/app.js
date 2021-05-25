@@ -204,15 +204,8 @@ const app = new Vue({
          * Scroll down to the last message
          */
         scrollDown() {
-            // first approach
-            /* this.lastMessage = document.querySelector('.message:last-child');
-            this.lastMessage.scrollIntoView(); */
-
-            // second approach
             const messageBox = document.querySelector('.messages');
-            console.log(messageBox.scrollTop);
-            console.log(messageBox.scrollHeight);
-            messageBox.scrollTo(0, messageBox.scrollHeight + 1000);
+            messageBox.scrollTop = messageBox.scrollHeight;
         },
 
         /**
