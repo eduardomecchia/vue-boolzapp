@@ -354,9 +354,3 @@ i:not(.search-bar i) {
 .delete-message:hover {
     background-color: #eaeaea;
 }
-
-/* * {
-    background: #000 !important;
-    color: #0f0 !important;
-    outline: solid #f00 1px !important;
-  } */
