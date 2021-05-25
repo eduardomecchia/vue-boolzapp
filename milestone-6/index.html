@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BoolzApp</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    </head>
+    <body>
+        <!-- Application wrapper -->
+        <div id="app">
+            <!-- Left sidebar -->
+            <aside id="sidebar">
+                <!-- Info and options regarding the user -->
+                <div id="user-options" class="bg-grey">
+                    <div class="user">
+                        <div class="avatar-wrapper">
+                            <img :src="userImage" alt="">
+                        </div>
+
+                        <div>Nome Utente</div>
+                    </div>
+
+                    <div class="options text-grey">
+                        <i class="fas fa-circle-notch "></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+
+                <!-- Notifications bar -->
+                <div class="notifications">
+                    <div class="bell bg-white">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+
+                    <div class="turn-on-notifications">
+                        <span>Ricevi notifiche di nuovi messaggi</span>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+
+                <!-- Search bar -->
+                <div class="search-bar-wrapper">
+                    <div class="search-bar bg-white">
+                        <i class="fas fa-search text-grey"></i>
+                        <input type="text" id="search" v-model="searchQuery" placeholder="Cerca o inizia una nuova chat" @keyup="search">
+                    </div>
+                </div>
+
+                <!-- Contact list -->
+                <ul class="contact-list bg-grey">
+                    <li class="contact-entry bg-white" v-for="(contact, index) in contacts" v-if="contact.visible" @click="changeContact(index)">
+                        <div class="avatar-wrapper">
+                            <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                        </div>
+
+                        <div class="contact-info">
+                            <span class="contact-name">{{ contact.name }}</span>
+
+                            <span v-if="contact.messages.length > 0" class="contact-message text-grey">{{ contact.messages[contact.messages.length - 1].text }}</span>
+                        </div>
+
+                        <span v-if="contact.messages.length > 0" class="contact-date text-grey">{{ contact.messages[contact.messages.length - 1].date }}</span>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Messaging interface -->
+            <main id="app-main">
+                <!-- Info and options regarding the recipient -->
+                <div id="recipient-options" class="bg-grey">
+                    <div class="recipient">
+                            <div class="avatar-wrapper">
+                                <img :src="'./assets/img/avatar' + currentContact.avatar + '.jpg'" alt="">
+                            </div>
+    
+                            <div class="recipient-info">
+                                <span>{{ currentContact.name }}</span>
+                                <span v-if="currentContact.messages.length > 0" class="recipient-status text-dark-grey">Ultimo accesso il {{ currentContact.messages[currentContact.messages.length - 1].date }}</span> 
+                            </div>
+                    </div>
+
+                    <div class="options text-grey">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+
+                <!-- Messages section -->
+                <div class="messages">
+                    <div class="message" v-for="(message, index) in currentContact.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
+                        <span v-if="currentContact.messages.length > 0" class="message-text">{{ message.text }}</span>
+
+                        <span v-if="currentContact.messages.length > 0" class="message-date text-grey">{{ message.date }}</span>
+
+                        <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="toggleDropdown(index)"></i>
+
+                        <div class="dropdown-menu bg-white">
+                            <span class="message-info">Message info</span>
+                            <span class="delete-message" @click="deleteMessage(index)">Delete message</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message input field -->
+                <div class="msg-bar-wrapper bg-light-grey">
+                    <i class="far fa-smile text-dark-grey"></i>
+                    <input type="text" id="msg-bar" v-model="messageBar" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
+                    <i class="fas fa-microphone text-dark-grey"></i>
+                </div>
+            </main>
+        </div>
+        
+        <!-- Vue.js 2.6.12 CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+        <!-- Day.js 1.10.4 CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+
+        <!-- App script -->
+        <script src="./assets/js/app.js"></script>
+    </body>
+</html>
