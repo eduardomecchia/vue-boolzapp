@@ -96,7 +96,7 @@
                 <!-- Messages section -->
                 <div class="messages">
                     <div class="message" v-for="(message, index) in currentContact.messages" :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
-                        <span v-if="currentContact.messages.length > 0" class="message-content">{{ message.content }}</span>
+                        <span v-if="currentContact.messages.length > 0" class="message-text">{{ message.text }}</span>
 
                         <span v-if="currentContact.messages.length > 0" class="message-date text-grey">{{ message.date }}</span>
 
@@ -113,7 +113,7 @@
                 <div class="msg-bar-wrapper bg-light-grey">
                     <i class="far fa-smile text-dark-grey"></i>
                     <input type="text" id="msg-bar" v-model="messageBar" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
-                    <i class="fas fa-microphone text-dark-grey" @mousedown="startRecording" @mouseup="stopRecording"></i>
+                    <i class="fas fa-microphone text-dark-grey"></i>
                 </div>
             </main>
         </div>

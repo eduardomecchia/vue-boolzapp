@@ -12,17 +12,17 @@ const app = new Vue({
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        content: 'Hai portato a spasso il cane?',
+                        text: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        content: 'Ricordati di dargli da mangiare',
+                        text: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        content: 'Tutto fatto!',
+                        text: 'Tutto fatto!',
                         status: 'received'
                     }
                 ],
@@ -34,17 +34,17 @@ const app = new Vue({
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
-                        content: 'Ciao come stai?',
+                        text: 'Ciao come stai?',
                         status: 'sent'
                     },
                     {
                         date: '20/03/2020 16:30:55',
-                        content: 'Bene grazie! Stasera ci vediamo?',
+                        text: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
                     },
                     {
                         date: '20/03/2020 16:35:00',
-                        content: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
                     }
                 ],
@@ -56,17 +56,17 @@ const app = new Vue({
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
-                        content: 'La Marianna va in campagna',
+                        text: 'La Marianna va in campagna',
                         status: 'received'
                     },
                     {
                         date: '28/03/2020 10:20:10',
-                        content: 'Sicuro di non aver sbagliato chat?',
+                        text: 'Sicuro di non aver sbagliato chat?',
                         status: 'sent'
                     },
                     {
                         date: '28/03/2020 16:15:22',
-                        content: 'Ah scusa!',
+                        text: 'Ah scusa!',
                         status: 'received'
                     }
                 ],
@@ -78,12 +78,12 @@ const app = new Vue({
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        content: 'Lo sai che ha aperto una nuova pizzeria?',
+                        text: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        content: 'Si, ma preferirei andare al cinema',
+                        text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                     }
                 ],
@@ -159,7 +159,7 @@ const app = new Vue({
             messages.push(
                 { 
                     date: this.getCurrentTime(),
-                    content: this.messageBar,
+                    text: this.messageBar,
                     status: 'sent'
                 }
             );
@@ -193,7 +193,7 @@ const app = new Vue({
                 app.currentContact.messages.push(
                     {
                         date: app.getCurrentTime(),
-                        content: 'Ok',
+                        text: 'Ok',
                         status: 'received'
                     }
                 );
@@ -239,54 +239,6 @@ const app = new Vue({
             } else if (elDropdowns[index].style.display === "flex") {
                 elDropdowns[index].style.display = "none";
             }
-        },
-
-        /**
-         * Record audio messages
-         */
-        startRecording() {
-            navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(function (stream) {
-                // Start recording audio
-                const mediaRecorder = new MediaRecorder(stream);
-                app.mediaRecorder = mediaRecorder;
-                mediaRecorder.start();
-
-                const audioChunks = [];
-
-                // Push audio chunks into the initialized array
-                mediaRecorder.addEventListener("dataavailable", function (event) {
-                    audioChunks.push(event.data);
-                })
-
-                mediaRecorder.addEventListener("stop", function () {
-                    // Pass audio chunks into Blob constructor
-                    const audioBlob = new Blob(audioChunks);
-
-                    // Create URL referencing the blob
-                    const audioUrl = URL.createObjectURL(audioBlob);
-
-                    // Play the audio back
-                    /* const audio = new Audio(audioUrl);
-                    audio.play(); */
-
-                    // Create new message with the audio
-                    const audio = new Audio(audioUrl);
-                    console.log(audio);
-                    app.currentContact.messages.push(
-                        {
-                            date: app.getCurrentTime(),
-                            audio: audio,
-                            status: 'sent'
-                        }
-                    );
-                });
-            });
-        },
-
-        stopRecording() {
-            // Stop recording audio
-            this.mediaRecorder.stop();
         }
     },
 
