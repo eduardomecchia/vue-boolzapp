@@ -273,6 +273,14 @@ i:not(.search-bar i) {
     outline: 0;
 }
 
+.msg-bar-wrapper .fa-microphone{
+    transition: 0.1s;
+}
+
+.msg-bar-wrapper .fa-microphone:active {
+    color: red;
+}
+
 /* Messages section */
 
 .messages {
