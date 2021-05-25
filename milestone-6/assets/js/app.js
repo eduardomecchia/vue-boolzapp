@@ -12,17 +12,17 @@ const app = new Vue({
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
+                        content: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        text: 'Ricordati di dargli da mangiare',
+                        content: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
+                        content: 'Tutto fatto!',
                         status: 'received'
                     }
                 ],
@@ -34,17 +34,17 @@ const app = new Vue({
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        content: 'Ciao come stai?',
                         status: 'sent'
                     },
                     {
                         date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        content: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
                     },
                     {
                         date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        content: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
                     }
                 ],
@@ -56,17 +56,17 @@ const app = new Vue({
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
-                        text: 'La Marianna va in campagna',
+                        content: 'La Marianna va in campagna',
                         status: 'received'
                     },
                     {
                         date: '28/03/2020 10:20:10',
-                        text: 'Sicuro di non aver sbagliato chat?',
+                        content: 'Sicuro di non aver sbagliato chat?',
                         status: 'sent'
                     },
                     {
                         date: '28/03/2020 16:15:22',
-                        text: 'Ah scusa!',
+                        content: 'Ah scusa!',
                         status: 'received'
                     }
                 ],
@@ -78,12 +78,12 @@ const app = new Vue({
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        content: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        text: 'Si, ma preferirei andare al cinema',
+                        content: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                     }
                 ],
@@ -159,7 +159,7 @@ const app = new Vue({
             messages.push(
                 { 
                     date: this.getCurrentTime(),
-                    text: this.messageBar,
+                    content: this.messageBar,
                     status: 'sent'
                 }
             );
@@ -193,7 +193,7 @@ const app = new Vue({
                 app.currentContact.messages.push(
                     {
                         date: app.getCurrentTime(),
-                        text: 'Ok',
+                        content: 'Ok',
                         status: 'received'
                     }
                 );
@@ -272,12 +272,11 @@ const app = new Vue({
 
                     // Create new message with the audio
                     const audio = new Audio(audioUrl);
-                    console.log(audioUrl);
                     console.log(audio);
                     app.currentContact.messages.push(
                         {
                             date: app.getCurrentTime(),
-                            text: audio,
+                            audio: audio,
                             status: 'sent'
                         }
                     );
