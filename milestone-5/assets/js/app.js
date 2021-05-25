@@ -166,6 +166,9 @@ const app = new Vue({
             
             // Trigger bot's automatic response after 1 second
             this.receiveMessage();
+
+            // Scroll the page down to the new message
+            this.scrollDown();
         },
 
         /**
@@ -192,6 +195,22 @@ const app = new Vue({
                     }
                 );
             }, 1000);
+
+            // Scroll the page down to the new message
+            this.scrollDown();
+        },
+
+        /**
+         * Scroll down to the last message
+         */
+        scrollDown() {
+            // first approach
+            /* this.lastMessage = document.querySelector('.message:last-child');
+            this.lastMessage.scrollIntoView(); */
+
+            // second approach
+            const messageBox = document.querySelector('.messages');
+            messageBox.scrollTop = messageBox.scrollHeight;
         },
 
         /**
@@ -232,15 +251,15 @@ const app = new Vue({
         // Code that runs after the entire view has been rendered
         this.$nextTick(function () {
             // Scroll the messages section to bottom
-            this.lastMessage = document.querySelector('.message:last-child');
-            
-            this.lastMessage.scrollIntoView();
+            this.scrollDown();
         })
 
         // Close dropdown menu when clicking outside of it
         document.addEventListener('click', function (event) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
             
+            // If you clicked on a dropdown arrow or a "delete message" button
+            // exit this event listener
             if (event.target.classList.contains('dropdown-arrow') || event.target.classList.contains('delete-message')) {
                 return
             };
