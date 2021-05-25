@@ -14,11 +14,11 @@ body {
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom,
-    #009688 0px,
-    #009688 138px,
-    #dddbd1 100px,
-    #d2dbdc 100%
-)
+        #009688 0px,
+        #009688 115px,
+        #dddbd1 100px,
+        #d2dbdc 100%
+    )
 }
 
 .bg-grey {
@@ -355,4 +355,3 @@ i:not(.search-bar i) {
 .delete-message:hover {
     background-color: #eaeaea;
 }
-
