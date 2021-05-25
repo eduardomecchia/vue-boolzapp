@@ -201,8 +201,8 @@ const app = new Vue({
          * Scroll down to the last message
          */
         scrollDown() {
-            const messageBox = document.querySelector(".messages");
-            messageBox.scrollTop = messageBox.scrollHeight;
+            const messageContainer = document.querySelector(".messages");
+            messageContainer.scrollTop = messageContainer.scrollHeight;
         },
 
         /**
