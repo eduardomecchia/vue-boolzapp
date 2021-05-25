@@ -405,7 +405,13 @@ i:not(.search-bar i) {
 .popup-controls > * {
     cursor: pointer;
     padding: 10px 25px;
+    border: 1px solid lightgrey;
     border-radius: 5px;
+    transition: 0.1s;
+}
+
+.popup-controls > *:hover {
+    box-shadow: 0px 1px 7px grey;
 }
 
 .popup-controls button:first-child {
