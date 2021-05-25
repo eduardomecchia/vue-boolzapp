@@ -79,6 +79,12 @@ i:not(.search-bar i) {
     align-items: center;
 }
 
+.username {
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .options {
     display: flex;
     flex-wrap: nowrap;
