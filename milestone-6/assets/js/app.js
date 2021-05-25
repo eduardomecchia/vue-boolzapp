@@ -2,9 +2,6 @@ const app = new Vue({
     el: "#app",
 
     data:  {
-        username: "Eduardo",
-        userImage: "./assets/img/avatar_io.jpg",
-        
         contacts: [
             {
                 name: "Michele",
@@ -126,14 +123,15 @@ const app = new Vue({
             messages: [{}]
         },
 
+        lastMessage: "",
+
         messageBar: "",
 
         searchQuery: "",
 
-        lastMessage: "",
+        username: "Eduardo",
 
-        // Audio stuff
-        mediaRecorder: {}
+        userImage: "./assets/img/avatar_io.jpg"
     },
 
     methods: {
