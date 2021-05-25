@@ -129,7 +129,10 @@ const app = new Vue({
 
         searchQuery: '',
 
-        lastMessage: ''
+        lastMessage: '',
+
+        // Audio stuff
+        mediaRecorder: {}
     },
 
     methods: {
@@ -236,6 +239,55 @@ const app = new Vue({
             } else if (elDropdowns[index].style.display === "flex") {
                 elDropdowns[index].style.display = "none";
             }
+        },
+
+        /**
+         * Record audio messages
+         */
+        startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(function (stream) {
+                // Start recording audio
+                const mediaRecorder = new MediaRecorder(stream);
+                app.mediaRecorder = mediaRecorder;
+                mediaRecorder.start();
+
+                const audioChunks = [];
+
+                // Push audio chunks into the initialized array
+                mediaRecorder.addEventListener("dataavailable", function (event) {
+                    audioChunks.push(event.data);
+                })
+
+                mediaRecorder.addEventListener("stop", function () {
+                    // Pass audio chunks into Blob constructor
+                    const audioBlob = new Blob(audioChunks);
+
+                    // Create URL referencing the blob
+                    const audioUrl = URL.createObjectURL(audioBlob);
+
+                    // Play the audio back
+                    /* const audio = new Audio(audioUrl);
+                    audio.play(); */
+
+                    // Create new message with the audio
+                    const audio = new Audio(audioUrl);
+                    console.log(audioUrl);
+                    console.log(audio);
+                    app.currentContact.messages.push(
+                        {
+                            date: app.getCurrentTime(),
+                            text: audio,
+                            status: 'sent'
+                        }
+                    );
+                });
+            });
+        },
+
+        stopRecording() {
+            // Stop recording audio
+            this.mediaRecorder.stop();
         }
     },
 
