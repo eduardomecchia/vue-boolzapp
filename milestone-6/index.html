@@ -116,6 +116,15 @@
                     <i class="fas fa-microphone text-dark-grey"></i>
                 </div>
             </main>
+
+            <!-- Confirm deletion prompt -->
+            <div v-if="popup.visible" class="overlay">
+                <div class="popup">
+                    <span>Delete message?</span>
+                    <button @click="">Delete</button>
+                    <button @click="">Cancel</button>
+                </div>
+            </div>
         </div>
         
         <!-- Vue.js 2.6.12 CDN -->

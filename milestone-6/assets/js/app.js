@@ -127,6 +127,16 @@ const app = new Vue({
 
         messageBar: "",
 
+        popup: {
+            visible: false,
+            delete(contact, index) {
+                contact.messages.splice(index, 1);
+            },
+            cancel() {
+                this.visible = true;
+            }
+        },
+
         searchQuery: "",
 
         userImage: "./assets/img/avatar_io.jpg",
@@ -150,7 +160,9 @@ const app = new Vue({
          */
         deleteMessage(index) {
             const messages = this.currentContact.messages;
-            messages.splice(index, 1);
+            
+            // Trigger confirmation popup
+            this.popup.visible = true;
 
             // Make sure that the dropdown menu is closed
             this.toggleDropdown(index);
