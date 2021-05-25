@@ -2,6 +2,7 @@ const app = new Vue({
     el: '#app',
 
     data:  {
+        username: 'Eduardo',
         userImage: './assets/img/avatar_io.jpg',
         
         contacts: [
