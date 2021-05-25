@@ -123,8 +123,6 @@ const app = new Vue({
             messages: [{}]
         },
 
-        lastMessage: "",
-
         messageBar: "",
 
         popup: {
@@ -156,10 +154,11 @@ const app = new Vue({
             // Make sure that the dropdown menu is closed
             this.toggleDropdown(index);
 
+            // Make popup appear
             this.popup.visible = true;
-            this.popup.index = index;
 
-            /* this.deleteMessage(index); */
+            // Pass the index we clicked on to Vue data
+            this.popup.index = index;
         },
 
         /**
