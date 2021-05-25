@@ -175,8 +175,8 @@ i:not(.search-bar i) {
     align-items: center;
     cursor: pointer;
     padding: 15px 30px;
-    margin-bottom: 2px;
     position: relative;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .contact-entry:hover:not(.selected) {
