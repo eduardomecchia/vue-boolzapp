@@ -10,13 +10,11 @@
 body {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
     background-image: linear-gradient(to bottom,
         #009688 0px,
-        #009688 115px,
-        #dddbd1 100px,
+        #009688 135px,
+        #dddbd1 135px,
         #d2dbdc 100%
     )
 }
@@ -52,6 +50,7 @@ i:not(.search-bar i) {
     width: 85%;
     height: 95%;
     display: flex;
+    margin: 20px auto 0px auto;
 }
 
 /* Sidebar rules */
@@ -355,3 +354,9 @@ i:not(.search-bar i) {
 .delete-message:hover {
     background-color: #eaeaea;
 }
+
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
