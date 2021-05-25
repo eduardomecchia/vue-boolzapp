@@ -23,7 +23,7 @@ const app = new Vue({
                         text: "Tutto fatto!",
                         status: "received"
                     }
-                ],
+                ]
             },
             {
                 name: "Fabio",
@@ -45,7 +45,7 @@ const app = new Vue({
                         text: "Mi piacerebbe ma devo andare a fare la spesa.",
                         status: "sent"
                     }
-                ],
+                ]
             },
             {
                 name: "Samuele",
@@ -67,7 +67,7 @@ const app = new Vue({
                         text: "Ah scusa!",
                         status: "received"
                     }
-                ],
+                ]
             },
             {
                 name: "Luisa",
@@ -84,35 +84,35 @@ const app = new Vue({
                         text: "Si, ma preferirei andare al cinema",
                         status: "received"
                     }
-                ],
+                ]
             },
 
             {
                 name: "Vincenzo",
                 avatar: "_5",
                 visible: true,
-                messages: [{}],
+                messages: [{}]
             },
 
             {
                 name: "Sara",
                 avatar: "_6",
                 visible: true,
-                messages: [{}],
+                messages: [{}]
             },
 
             {
                 name: "Ugo",
                 avatar: "_7",
                 visible: true,
-                messages: [{}],
+                messages: [{}]
             },
 
             {
                 name: "Francesco",
                 avatar: "_8",
                 visible: true,
-                messages: [{}],
+                messages: [{}]
             }
         ],
 
@@ -129,9 +129,9 @@ const app = new Vue({
 
         searchQuery: "",
 
-        username: "Eduardo",
+        userImage: "./assets/img/avatar_io.jpg",
 
-        userImage: "./assets/img/avatar_io.jpg"
+        username: "Eduardo"
     },
 
     methods: {
@@ -143,38 +143,8 @@ const app = new Vue({
         },
 
         /**
-         * Get current time as a string using day.js
-         */
-        getCurrentTime() {
-            const currentTime = dayjs().format("DD/MM/YYYY HH:mm:ss");
-            return currentTime;
-        },
-
-        /**
-         * Send messages pressing enter
-         */
-        sendMessage() {
-            const messages = this.currentContact.messages;
-            messages.push(
-                { 
-                    date: this.getCurrentTime(),
-                    text: this.messageBar,
-                    status: "sent"
-                }
-            );
-            
-            // Clean the message bar
-            this.messageBar = "";
-            
-            // Trigger bot"s automatic response after 1 second
-            this.receiveMessage();
-
-            // Scroll the page down to the new message
-            this.scrollDown();
-        },
-
-        /**
-         * Delete the message that has been clicked on and close the dropdown menu
+         * Delete the message that has been clicked on
+         * and close the dropdown menu
          */
         deleteMessage(index) {
             const messages = this.currentContact.messages;
@@ -182,6 +152,14 @@ const app = new Vue({
 
             // Make sure that the dropdown menu is closed
             this.toggleDropdown(index);
+        },
+
+        /**
+         * Get current time as a string using day.js
+         */
+        getCurrentTime() {
+            const currentTime = dayjs().format("DD/MM/YYYY HH:mm:ss");
+            return currentTime;
         },
 
         /**
@@ -216,7 +194,7 @@ const app = new Vue({
         search() {
             const searchQuery = this.searchQuery.toLowerCase();
 
-            this.contacts.forEach(contact => {
+            this.contacts.forEach(function (contact) {
                 const savedName = contact.name.toLowerCase();
 
                 if (savedName.includes(searchQuery)){
@@ -225,6 +203,29 @@ const app = new Vue({
                     contact.visible = false;
                 }
             });
+        },
+
+        /**
+         * Send messages pressing enter
+         */
+         sendMessage() {
+            const messages = this.currentContact.messages;
+            messages.push(
+                { 
+                    date: this.getCurrentTime(),
+                    text: this.messageBar,
+                    status: "sent"
+                }
+            );
+            
+            // Clean the message bar
+            this.messageBar = "";
+            
+            // Trigger bot"s automatic response after 1 second
+            this.receiveMessage();
+
+            // Scroll the page down to the new message
+            this.scrollDown();
         },
 
         /**
@@ -256,13 +257,15 @@ const app = new Vue({
         document.addEventListener("click", function (event) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
             
-            // If you clicked on a dropdown arrow or a "delete message" button
+            // If you clicked on a dropdown arrow 
+            // or a "delete message" button
             // exit this event listener
-            if (event.target.classList.contains("dropdown-arrow") || event.target.classList.contains("delete-message")) {
+            const targetClasses = event.target.classList;
+            if (targetClasses.contains("dropdown-arrow") || targetClasses.contains("delete-message")) {
                 return;
             }
 
-            elDropdowns.forEach(dropdown => {
+            elDropdowns.forEach(function (dropdown) {
                 if (dropdown.style.display === "flex") {
                     dropdown.style.display = "none";
                 }
