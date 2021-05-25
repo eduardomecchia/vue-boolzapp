@@ -168,7 +168,7 @@ const app = new Vue({
             this.receiveMessage();
 
             // Scroll the page down to the new message
-            this.scrollDown();
+            /* this.scrollDown(); */
         },
 
         /**
@@ -210,7 +210,9 @@ const app = new Vue({
 
             // second approach
             const messageBox = document.querySelector('.messages');
-            messageBox.scrollTop = messageBox.scrollHeight;
+            /* messageBox.scrollTop = messageBox.scrollHeight; */
+            console.log(messageBox.scrollTop);
+            messageBox.scrollTo(0, 10000);
         },
 
         /**
