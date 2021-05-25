@@ -55,7 +55,7 @@
 
                 <!-- Contact list -->
                 <ul class="contact-list bg-grey">
-                    <li class="contact-entry bg-white" v-for="(contact, index) in contacts" v-if="contact.visible" @click="changeContact(index)">
+                    <li class="contact-entry bg-white" v-for="(contact, index) in contacts" :class="{ selected : contact === currentContact }" v-if="contact.visible" @click="changeContact(index)">
                         <div class="avatar-wrapper">
                             <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                         </div>
