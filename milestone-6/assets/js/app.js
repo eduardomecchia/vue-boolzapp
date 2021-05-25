@@ -137,6 +137,7 @@ const app = new Vue({
     methods: {
         /**
          * Change the current displayed contact to be the one you clicked on
+         * @param {number} index - The index that references the contact you clicked on
          */
         changeContact(index) {
             this.currentContact = this.contacts[index];
@@ -145,6 +146,7 @@ const app = new Vue({
         /**
          * Delete the message that has been clicked on
          * and close the dropdown menu
+         * @param {number} index - The index that references the message you clicked on
          */
         deleteMessage(index) {
             const messages = this.currentContact.messages;
@@ -155,7 +157,7 @@ const app = new Vue({
         },
 
         /**
-         * Get current time as a string using day.js
+         * Return current time as a string using day.js
          */
         getCurrentTime() {
             const currentTime = dayjs().format("DD/MM/YYYY HH:mm:ss");
@@ -230,6 +232,7 @@ const app = new Vue({
 
         /**
          * Toggle message dropdown when clicking on the arrow
+         * @param {number} index - Index that references the dropdown you clicked on
          */
         toggleDropdown(index) {
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
