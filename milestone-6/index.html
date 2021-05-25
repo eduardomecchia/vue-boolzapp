@@ -103,8 +103,8 @@
                         <i class="fas fa-chevron-down dropdown-arrow text-grey" @click="toggleDropdown(index)"></i>
 
                         <div class="dropdown-menu bg-white">
-                            <span class="message-info">Message info</span>
-                            <span class="delete-message" @click="deleteMessage(index)">Delete message</span>
+                            <span class="message-info">Info</span>
+                            <span class="delete-message" @click="deleteMessage(index)">Cancella messaggio</span>
                         </div>
                     </div>
                 </div>
@@ -120,9 +120,12 @@
             <!-- Confirm deletion prompt -->
             <div v-if="popup.visible" class="overlay">
                 <div class="popup">
-                    <span>Delete message?</span>
-                    <button @click="">Delete</button>
-                    <button @click="">Cancel</button>
+                    <span class="popup-question">Cancella messaggio?</span>
+
+                    <div class="popup-controls">
+                        <button @click="">Annulla</button>
+                        <button @click="">Cancella</button>
+                    </div>
                 </div>
             </div>
         </div>
