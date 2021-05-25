@@ -208,7 +208,7 @@ const app = new Vue({
         /**
          * Send messages pressing enter
          */
-         sendMessage() {
+        sendMessage() {
             const messages = this.currentContact.messages;
             messages.push(
                 { 
@@ -235,10 +235,10 @@ const app = new Vue({
             const elDropdowns = document.querySelectorAll(".dropdown-menu");
             let dropdownStyle = elDropdowns[index].style;
 
-            if (dropdownStyle.display === "" || dropdownStyle.display === "none") {
-                dropdownStyle.display = "flex";
-            } else if (dropdownStyle.display === "flex") {
+            if (dropdownStyle.display === "flex") {
                 dropdownStyle.display = "none";
+            } else {
+                dropdownStyle.display = "flex";
             }
         }
     },
