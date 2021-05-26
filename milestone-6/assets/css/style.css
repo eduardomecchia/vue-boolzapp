@@ -391,11 +391,11 @@ i:not(.search-bar i) {
     box-shadow: 2px 2px 10px grey;
     white-space: nowrap;
     padding: 25px;
-    color: #05cd51;
 }
 
 .popup-question {
     align-self: flex-start;
+    color: black;
 }
 
 .popup-controls {
