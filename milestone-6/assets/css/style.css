@@ -84,6 +84,7 @@ i:not(.search-bar i) {
     max-width: 190px;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-left: 15px;
 }
 
 .options {

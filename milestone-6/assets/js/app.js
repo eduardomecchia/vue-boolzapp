@@ -134,7 +134,7 @@ const app = new Vue({
 
         userImage: "./assets/img/avatar_io.jpg",
 
-        username: "Eduardo"
+        username: "Gaia"
     },
 
     methods: {
