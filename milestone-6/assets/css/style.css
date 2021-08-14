@@ -94,6 +94,11 @@ i:not(.search-bar i) {
 
 .options i {
     margin-right: 27px;
+    transition: color 0.2s;
+}
+
+.options i:hover {
+    color: grey;
 }
 
 /* Notifications bar rules */
@@ -256,6 +261,14 @@ i:not(.search-bar i) {
 .recipient-status {
     font-size: 20px;
     margin-top: 5px;
+}
+
+.recipient-options i {
+    transition: color 0.2s;
+}
+
+.recipient-options i:hover {
+    color: grey;
 }
 
 /* Message input field rules */
