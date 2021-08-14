@@ -280,9 +280,13 @@ i:not(.search-bar i) {
     padding: 15px 30px;
 }
 
-#app-main .msg-bar-wrapper i {
+.msg-bar-wrapper i {
     font-size: 40px;
     cursor: pointer;
+}
+
+.msg-bar-wrapper i:nth-child(3) {
+    margin-right: 20px;
 }
 
 #msg-bar {
