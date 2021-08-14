@@ -227,22 +227,25 @@ const app = new Vue({
          */
         sendMessage() {
             const messages = this.currentContact.messages;
-            messages.push(
-                { 
-                    date: this.getCurrentTime(),
-                    text: this.messageBar,
-                    status: "sent"
-                }
-            );
-            
-            // Clean the message bar
-            this.messageBar = "";
-            
-            // Trigger bot"s automatic response after 1 second
-            this.receiveMessage();
 
-            // Scroll the page down to the new message
-            this.scrollDown();
+            if (this.messageBar) {
+                messages.push(
+                    { 
+                        date: this.getCurrentTime(),
+                        text: this.messageBar,
+                        status: "sent"
+                    }
+                );
+                
+                // Clean the message bar
+                this.messageBar = "";
+                
+                // Trigger bot"s automatic response after 1 second
+                this.receiveMessage();
+    
+                // Scroll the page down to the new message
+                this.scrollDown();
+            }
         },
 
         /**
