@@ -223,7 +223,7 @@ const app = new Vue({
         },
 
         /**
-         * Send messages pressing enter
+         * Send message if it's not empty
          */
         sendMessage() {
             const messages = this.currentContact.messages;
