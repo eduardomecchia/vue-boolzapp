@@ -408,11 +408,11 @@ i:not(.search-bar i) {
     padding: 10px 25px;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 .popup-controls > *:hover {
-    box-shadow: 0px 1px 7px grey;
+    box-shadow: 0px 1px 5px grey;
 }
 
 .popup-controls button:first-child {
